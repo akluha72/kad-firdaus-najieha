@@ -1,0 +1,238 @@
+$gold:  #FFBB5C;
+$gold-text-lighter: #fdc77a;
+
+.card-detail-container {
+    position: relative;
+    z-index: 1;
+    color: black;
+    margin-top: 100px;
+    opacity: 0;
+    animation: slide-in-fwd-center 1.7s ease-out forwards;
+    animation-delay: 0.5s;
+
+    .card-detail-wrapper {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        text-align: center;
+
+        .detail-host {
+            color: $gold-text-lighter;
+            margin: 10px;
+
+            .greeting {
+                font-family: "PlayfairDisplay";
+                font-size: 14px;
+                margin-bottom: 30px;
+                color: white;
+
+                @media only screen and (min-width: 1200px) { 
+                    font-size: 20px;
+                }
+            }
+
+            h2 {
+                font-family: "classy_v", serif;
+                text-transform: capitalize;
+                font-size: 1.5rem;
+                margin-bottom: 0 !important;
+                color: $gold-text-lighter;
+                
+                @media only screen and (min-width: 1200px) { 
+                    font-size: 1.8rem;
+                }
+            }
+
+            p {
+                color: $gold-text-lighter;
+                font-family: "classy_v", serif;
+                margin: 10px;
+                font-size: 1.3rem;
+            }
+        }
+
+        .detail-guest-title {
+            padding: 20px;
+
+            h4 {
+                font-size: 1.0rem;
+                color: white;
+                text-transform: none;
+                font-family: "classy_v", serif;
+                margin-bottom: 0 !important;
+
+                @media only screen and (min-width: 1200px) { 
+                    font-size: 1.3rem;
+                    line-height: 1.8;
+                }
+            }
+        }
+
+        .detail-wedds-name {
+            h2 {
+                font-size: 1.7rem;
+                color:$gold-text-lighter;
+                text-transform: capitalize;
+                margin-bottom: 0;
+                font-family: "nova_quintaRg";
+                font-weight: 200;
+                font-style: normal;
+                text-transform: capitalize;
+                margin-bottom: 0 !important;
+
+                @media only screen and (min-width: 1200px) { 
+                    font-size: 1.6rem;
+                }
+            }
+
+            p {
+                font-family: "classy_v", serif;
+                text-transform: capitalize;
+                color: $gold-text-lighter;
+                font-size: 1.2rem;
+            }
+
+
+        }
+
+        .line-separator {
+            border: 1px solid $gold-text-lighter;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .detail-formality-con {
+            h2 {
+                text-align: center;
+                font-family: 'Playfair Display';
+                color: white;
+
+                @media only screen and (min-width: 1200px) { 
+                    font-size: 1.5rem;
+                }
+            }
+
+            .detail-formality-wrapper {
+                margin: 20px;
+
+                .title {
+                    color: $gold-text-lighter;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+
+                    @media only screen and (min-width: 1200px) { 
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .detail {
+                    font-family: "classy_v", serif;
+                    font-size: 1rem;
+
+                    @media only screen and (min-width: 1200px) { 
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        .program-schedule {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+
+            h2 {
+                color: white;
+                text-align: center;
+                font-family: 'Playfair Display';
+
+                @media only screen and (min-width: 1200px) { 
+                    font-size: 1.7rem;
+                }
+            }
+
+            .timeline {
+
+                @media only screen and (min-width: 1200px) { 
+                    margin: 0px 60px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 15px; // Adjust this based on your layout
+                    top: 65px;
+                    bottom: 0;
+                    width: 2px;
+                    background-color: whitesmoke;
+
+                    @media only screen and (min-width: 1200px) { 
+                        font-size: 1.5rem;
+                        left: 77px;
+                    }
+                }
+
+                .program-item {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 8px;
+                    margin-left: 30px;
+
+                    .time {
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        color: $gold-text-lighter;
+                        font-family: 'Playfair Display';
+                    }
+
+                    .event {
+                        font-size: 1rem;
+                        flex: 1;
+                        font-family: 'classy_v';
+
+                        @media only screen and (min-width: 1200px) { 
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                    // Dot for the current event
+                    &.current{
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: -19px;
+                            top: 30px;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background-color: $gold-text-lighter;
+                            animation: breathe 1.6s ease-in-out infinite;
+    
+                            @media only screen and (min-width: 1200px) { 
+                                left: -18px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        transform: scale(1); // Start and end at normal size
+    }
+
+    50% {
+        transform: scale(1.2); // Scale up to 1.5 times the original size
+    }
+}

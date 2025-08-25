@@ -1,0 +1,280 @@
+// .ms-button {
+//   background-color: $orange;
+//   font-family:fieldworkB;
+//   padding: 20px 30px;
+//   color: $white;
+//   display: inline-block;
+//   transition: 0.27s all ease-in-out;
+//   cursor: pointer;
+//   border: 2px solid $orange;
+
+//   &:hover {
+//     background-color: $white;
+//     color: $orange;
+//   }
+// }
+
+// .tw-button {
+//   background-color: $white;
+//   font-family:fieldworkB;
+//   padding: 20px 10px;
+//   color: $black;
+//   display: inline-block;
+//   transition: 0.27s all ease-in-out;
+//   cursor: pointer;
+//   border: 2px solid $white;
+//   height: 80px;
+//   &:hover {
+//     // background-color: transparent;
+//     // color: $white;
+//   }
+// }
+
+// .mp-button {
+//   background-color: $black;
+//   font-family:fieldworkB;
+//   padding: 20px 30px;
+//   color: $white;
+//   display: inline-block;
+//   transition: 0.27s all ease-in-out;
+//   cursor: pointer;
+//   border: 2px solid $black;
+
+//   &:hover {
+//     background-color: $white;
+//     color: $black;
+//   }
+// }
+
+// .sg-button {
+//   background-color: $orange;
+//   font-family:fieldwork;
+//   padding: 20px 30px;
+//   color: $white;
+//   display: inline-block;
+//   transition: 0.27s all ease-in-out;
+//   cursor: pointer;
+//   border: 2px solid $orange;
+
+//   &:hover {
+//     background-color: $white;
+//     color: $orange;
+//   }
+// }
+
+// .nav-button{
+//   color: $brown;
+//   font-family:fieldwork;
+//   padding: 25px 20px;
+//   cursor: pointer;
+//   &:hover{
+//     background-color: $cream;
+//     color: $brown;
+//   }
+// }
+
+// .solid-button {
+//   font-family:fieldworkB;
+//   padding: 10px 20px;
+//   display: inline-block;
+//   transition: ease-in-out 0.27s all;
+//   cursor: pointer;
+
+//   &.lgreen {
+//     border: solid 1px $orange;
+//     background-color: $orange;
+//     color: $white;
+
+//     &:hover {
+//       background-color: transparent;
+//       color: $orange;
+//     }
+//   }
+
+//   &.yellow {
+//     border: solid 1px $yellow;
+//     background-color: $yellow;
+//     color: $white;
+
+//     &:hover {
+//       background-color: transparent;
+//       color: $yellow;
+//     }
+//   }
+//   &.phonenumber{
+//     margin: 10px;
+//     border: solid 1px $lcream;
+//     background-color: $lcream;
+//     color: $white;
+
+//     &:hover {
+//       border: solid 1px $yellow;
+//       background-color: $yellow;
+//       color: $white;
+//     }
+//   }
+//   .iconimg{
+//     display: inline-block;
+//     vertical-align: middle;
+//     margin-right: 10px;
+//     width: 20px;
+//   }
+//   p{
+//     display: inline-block;
+//     vertical-align: middle;
+//   }
+// }
+
+// .kb-button {
+//   padding: 6px 70px;
+//   transition: all 0.3s ease-in-out;
+//   text-align: center;
+//   cursor: pointer;
+//   display: inline-block;
+//   font-family:fieldworkB;
+//   text-transform: uppercase;
+//   margin: 10px 00 0;
+//   background-color: transparent;
+//   font-size: 14px;
+//   background-color: $orange;
+//   color: $black;
+//   border: solid 2px $orange;
+//   border-radius: 13px;
+//   &:hover{
+//     background-color: transparent;
+//     color: $orange;
+//   }
+
+//   &.invert {
+//     background-color: $orange;
+//     color: $black;
+//     border: solid 2px $orange;
+//     font-weight: bold;
+//     font-family: fieldworkB;
+
+//     &:hover{
+//       background-color: transparent;
+//       color: $orange;
+//       border: solid 2px $orange;
+//       font-weight: bold;
+//       font-family:fieldworkB ;
+//     }
+//   }
+
+//   &.promo {
+//     background-color: #E24860;
+//     border: solid 2px #E24860;
+//     color: #fff9e9;
+//     font-weight: bold;
+
+//     &:hover{
+//       background-color: transparent;
+//       color: $green;
+//     }
+
+//     &.invert {
+//       background-color: $main;
+//       color: $green;
+//       border: solid 2px $main;
+
+//       &:hover{
+//         background-color: $green;
+//         color: $main;
+//         border: solid 2px $green;
+//       }
+//     }
+//   }
+
+//   &.event {
+//     background-color: #7D1F17;
+//     border: solid 2px #7D1F17;
+//     color: #fff9e9;
+//     font-weight: bold;
+
+//     &:hover{
+//       background-color: transparent;
+//       color: #7D1F17;
+//     }
+
+//     &.invert {
+//       background-color: $main;
+//       color: $green;
+//       border: solid 2px $main;
+
+//       &:hover{
+//         background-color: $green;
+//         color: $main;
+//         border: solid 2px $green;
+//       }
+//     }
+//   }
+// }
+
+
+
+
+// /* WhatsApp Button */
+
+// .whatsApp {
+//   position: fixed;
+//   width: 50px;
+//   height: 50px;
+//   bottom: 75px;
+//   right: 20px;
+//   background-color: #4FCE5D;
+//   color: #FFF;
+//   border-radius: 50%;
+//   text-align: center;
+//   font-size: 30px;
+//   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+//   z-index: 16000160;
+
+//   border: 0px solid #ccc;
+//   transition: box-shadow .3s;
+
+//   &:hover {
+//     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.4);
+//     overflow: hidden;
+//   }
+
+//   i {
+//     margin: 10px 0 0 2px; //make the logo centered in the circle
+//     font-size: 31px; // logo size bigger
+//   }
+// }
+
+
+// .footer-float {
+//   position: fixed;
+//   right: 8px;
+//   bottom: 75px;
+//   z-index: 200;
+//   width: 100px;
+//   text-align: right;
+//   a {
+//     display: inline-block;
+//     clear: both;
+//   }
+//   a.supercalculator-btn {
+//     margin-bottom: 0px;
+//     img {
+//       max-width: 90px;
+//     }
+//   }
+//   a.whatsApp-btn {
+//     // margin-bottom: 10px;
+//     img {
+//       max-width: 60px;
+//     }
+//   }
+//   a.top-btn {
+//     img {
+//       max-width: 70px;
+//     }
+//     &:hover {
+//       img {
+//         filter: brightness(100);
+//       }
+//     }
+//   }
+// }

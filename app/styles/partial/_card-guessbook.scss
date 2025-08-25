@@ -1,0 +1,195 @@
+.guest-book-container {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    margin-bottom: 50px;
+
+    h2 {
+        color: white;
+        text-align: center;
+    }
+
+    .polaroid-container {
+        background-color: white;
+        padding: 5px;
+        margin: 0 auto 30px;
+
+        .polaroid-image {
+            background-color: rgb(0, 0, 0);
+            width: 95%;
+            height: 450px;
+            margin: 10px auto;
+            overflow: hidden;
+            border: 1px solid white;
+
+            img {
+                max-width: 600px;
+                min-width: 400px;
+                max-height: 100%;
+                object-fit: cover;
+                filter: brightness(0.9) contrast(1.1) saturate(0.9);
+            }
+        }
+
+        .message {
+            margin: 10px;
+
+            p {
+                color: black;
+            }
+
+            .polaroid-name {
+                font-size: 20px;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+
+            .polaroid-message {
+                font-size: 15px;
+                margin-top: 10px;
+            }
+
+            .polaroid-date {
+                margin-top: 10px;
+                text-align: right;
+            }
+
+        }
+    }
+
+    .guestbook-form {
+        // Overall form styling
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #faf9f6;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: 'Georgia', serif;
+
+
+        // Label styling
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #6b5b95;
+            font-weight: bold;
+        }
+
+        // Input and textarea styling
+        input[type="text"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fdfdfd;
+            transition: border 0.3s ease;
+
+            &:focus {
+                border: 1px solid #c49a6c;
+                outline: none;
+                background-color: #fff9f3;
+            }
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        // Submit button styling
+        button {
+            display: inline-block;
+            background-color: #c49a6c;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+                background-color: #b38259;
+                transform: translateY(-2px);
+            }
+
+            &:active {
+                transform: translateY(1px);
+                box-shadow: none;
+            }
+        }
+    }
+
+    // Optional: Add subtle animations and decorations to the form container
+    .guestbook-form {
+        position: relative;
+        padding-top: 40px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://example.com/floral-pattern.svg'); // Replace with a floral SVG
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        &:before {
+            top: -30px;
+            left: -30px;
+        }
+
+        &:after {
+            bottom: -30px;
+            right: -30px;
+        }
+    }
+}
+
+.polaroid-board {
+    display: flex; // Use flexbox for layout
+    flex-wrap: wrap; // Allow items to wrap
+    justify-content: space-around; // Space items evenly
+    margin: 20px; // Space around the board
+    position: relative; // Position context for absolute children
+
+    .polaroid-image {
+        background-color: white; // White background for Polaroid effect
+        padding: 10px; // Space around the image
+        border-radius: 10px; // Rounded corners
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); // Shadow effect
+        height: auto; // Auto height
+        margin: 10px; // Space between Polaroids
+        transform: rotate(calc(10deg * var(--random-rotation))); // Random rotation
+
+        // Random rotation variable for each Polaroid
+        // &:nth-child(1) { --random-rotation: 0; }
+        // &:nth-child(2) { --random-rotation: -1; }
+        // &:nth-child(3) { --random-rotation: 1; }
+        // &:nth-child(4) { --random-rotation: -2; }
+        // &:nth-child(5) { --random-rotation: 2; }
+        // &:nth-child(6) { --random-rotation: -3; }
+        // &:nth-child(7) { --random-rotation: 3; }
+        // &:nth-child(8) { --random-rotation: -3; }
+        // &:nth-child(9) { --random-rotation: 1; }
+        // &:nth-child(10) { --random-rotation: -2; }
+        // Continue adding for more images as needed
+
+        img {
+            max-width: 100%; // Responsive image width
+            max-height: 150px; // Limit height
+            object-fit: cover; // Maintain aspect ratio
+            filter: brightness(0.9) contrast(1.1) saturate(1.2); // Polaroid-style filter
+        }
+    }
+}

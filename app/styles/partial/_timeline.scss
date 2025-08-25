@@ -1,0 +1,92 @@
+// .timeline {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     position: relative;
+//     max-width: 800px;
+//     margin: 0 auto;
+
+//     background-size: 50%;
+//     background-position: 70px 138px;
+//     background-repeat: no-repeat;
+//     // background-image: url('../images/cover/bottom-second.png');
+
+
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         left: 50%;
+//         top: 0;
+//         bottom: 0;
+//         width: 4px;
+//         background-color: #ccc;
+//         transform: translateX(-50%);
+//     }
+
+//     .timeline-item {
+//         position: relative;
+//         width: 60%;
+//         height: 90px;
+//         margin: 20px 0;
+//         padding: 10px 20px;
+//         background-color: white;
+//         border-radius: 8px;
+//         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+
+//         &.left {
+//             align-items: flex-end;
+//         }
+
+//         &.right {
+//             align-items: flex-start;
+//         }
+
+//         &:nth-child(odd) {
+//             left: -1%;
+//             transform: translateX(-50%);
+//         }
+
+//         &:nth-child(even) {
+//             right: -1%;
+//             transform: translateX(50%);
+//         }
+
+//         &::before {
+//             content: '';
+//             position: absolute;
+//             top: 4px;
+//             width: 18px;
+//             height: 18px;
+//             background-color: $gold;
+//             border-radius: 50%;
+//             transform: translateY(-50%);
+//         }
+
+//         &:nth-child(odd)::before {
+//             right: -12px;
+//         }
+
+//         &:nth-child(even)::before {
+//             left: -12px;
+//         }
+
+//         .timeline-date {
+//             font-family:"Playfair Display", serif;
+//             text-align: left;
+//             font-size: 1.1em;
+//             font-weight: bold;
+//             color: $gold;
+//         }
+
+//         .timeline-content {
+//             font-family: "classy_v", serif;
+//             font-size: 1em;
+//             margin-top: 5px;
+//             text-align: left;
+//         }
+//     }
+// }
+

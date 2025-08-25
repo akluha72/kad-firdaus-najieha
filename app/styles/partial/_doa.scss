@@ -1,0 +1,75 @@
+$gold:  #FFBB5C;
+$gold-text-lighter: #fdc77a;
+
+.container-doa {
+    position: relative; /* Ensure child elements are positioned relative to this container */
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 70px auto;
+    border: 1px solid #E5D6BC;
+
+    .flower-top {
+        position: absolute;
+        top: 0; /* Pin to the top */
+        left: 0; /* Pin to the left */
+        width: 150px;
+        height: 160px;
+        background-image: url('../images/cover/flower-doa-top.webp');
+        background-size: contain;
+        background-position: top left;
+        background-repeat: no-repeat;
+        transform: translate(0%, 0%); /* Adjust position slightly outside container for a floating effect */
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            width: 135px;
+            height: 135px;
+            transform: translate(0%, 0%);
+        }
+
+        @media only screen and (min-width: 1200px) {
+            width: 135px;
+            height: 135px;
+            transform: translate(0%, 0%);
+        }
+    }
+
+    .flower-bottom {
+        position: absolute;
+        bottom: 0; /* Pin to the bottom */
+        right: 0; /* Pin to the right */
+        width: 150px;
+        height: 160px;
+        background-image: url('../images/cover/flower-doa-bottom.webp');
+        background-size: contain;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        transform: translate(0%, 0%); /* Adjust position slightly outside container for a floating effect */
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            width: 135px;
+            height: 135px;
+            transform: translate(3%, 0%);
+        }
+
+        @media only screen and (min-width: 1200px) {
+            width: 135px;
+            height: 135px;
+            transform: translate(3%, 0%);
+        }
+    }
+
+    .arabic {
+        font-size: 24px;
+    }
+
+    p {
+        color: $gold-text-lighter;
+        font-family: 'classy_v';
+        padding: 20px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,36 @@
+needs
+*whatsapp floating button ✅ 
+*section for user testing can change design and insert their name.
+*Brand Identity?
+*abstract design
+
+
+Section 1 (home page)
+- Hero section
+	*visually appealing image or video background that showcases the product.
+
+	*CTA (Call-to-action) Button "Explore Our Product Now !"
+
+	*Customer Testimonial
+
+	*Latest Design
+
+Section 2 (how it works)
+	* what are the features from the product
+
+	
+Section 3 (Product/Services Page)
+	*Product Cateogry*
+		1)Wedding Invitations
+		2)
+
+	*Customization Features
+	*Pricing
+	* design pallete
+ 		- popup with slide of the design inside.
+
+Section 4 (contact us) * footers
+
+	*Contact Information
+	*Social Media Links
+	*Request a Qoute
