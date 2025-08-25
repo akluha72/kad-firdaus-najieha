@@ -28,7 +28,7 @@ var ftpConfig = {
 	port: 22,
 	localRoot: __dirname + "/dist",
 	remoteRoot: process.env.FTP_REMOTE_DIRECTORY,
-    include: ["*", "**/*"],      // this would upload everything except dot files
+    include: ["*", "**/*"],   
     deleteRemote: false,
     forcePasv: true,
     sftp: true
@@ -44,22 +44,22 @@ const isTest = process.env.NODE_ENV === 'test';
 const isDev = !isProd && !isTest;
 
 function styles() {
-    return src('app/styles/*.scss', {
-        sourcemaps: !isProd,
-    })
+  return src('app/styles/**/*.scss', {
+    sourcemaps: !isProd,
+  })
     .pipe($.plumber())
     .pipe(sass({
-        outputStyle: 'expanded',
-        precision: 10,
-        includePaths: ['.']
+      outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['.']
     }).on('error', sass.logError))
     .pipe($.postcss([
-        autoprefixer()
+      autoprefixer()
     ]))
     .pipe(dest('.tmp/styles', {
-        sourcemaps: !isProd,
+      sourcemaps: !isProd,
     }))
-    .pipe(server.reload({stream: true}));
+    .pipe(server.stream({ match: '**/*.css' })); // ensure CSS injection
 }
 
 function scripts() {
@@ -196,7 +196,7 @@ function startAppServer() {
 		'.tmp/fonts/**/*'
 		]).on('change', server.reload);
 
-	watch('app/styles/**/*.scss', styles);
+	watch('app/styles/**/*.scss', styles).on('change', server.reload);
 	watch('app/scripts/**/*.js', scripts);
 	watch('modernizr.json', modernizr);
 	watch('app/fonts/**/*', fonts);
@@ -234,10 +234,13 @@ function startDistServer() {
 	});
 }
 
-function startFTP() {
-	return ftpDeploy.deploy(ftpConfig)
-	.then(res => console.log("finished:", res))
-	.catch(err => console.log(err));
+async function startFTP() {
+	try {
+		const res = await ftpDeploy.deploy(ftpConfig);
+		console.log("finished:", res);
+	} catch (err) {
+		console.log(err);
+	}
 }
 
 const deploy = series(build,startFTP);
