@@ -8,16 +8,55 @@ body {
 }
 
 .card-cover-wrapper {
-    // background-color: #fdc77a;
     background:
         url("../images/cover/facade-top-left.png") top left no-repeat,
         url("../images/cover/facade-top-right.png") top right no-repeat,
         url("../images/cover/facade-center.png") center center no-repeat,
         url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
         url("../images/cover/facade-bottom-right.png") bottom right no-repeat,
-        $background; // ← background color stays visible behind images
-    background-size: 250px 250px, 250px 250px, 700px 700px, 250px 250px; // one size per image
+        $background;
+    background-size: 250px 250px, 250px 250px, 1000px 1000px, 250px 250px;
     height: 100vh;
+
+    .center-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        background-color: $brown-border;
+        height: 540px;
+        width: 300px;
+        margin: 0 auto;
+        transform: translate(50%, 55%);
+        border-radius: 30px;
+
+
+        .text-walimatulurus {
+            // display: flex;
+            // flex-direction: column;
+            text-align: center;
+            font-size: 16px;
+
+            img {
+                width: 100px;
+                margin: 0 auto;
+            }
+        }
+
+        .text-initial {
+            
+            img {
+                width: 300px;
+            }
+        }
+
+        .text-date-location {
+            text-align: center;
+        }
+    }
+
 }
 
 
