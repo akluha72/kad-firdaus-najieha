@@ -1,3 +1,71 @@
-$gold:  #FFBB5C;
+$background: #ffcb70;
+$brown-border: #813e20;
+$gold: #FFBB5C;
 $gold-text-lighter: #fdc77a;
 
+.main-content-wrapper {
+    position: relative;
+    height: 100vh;
+    background: $background;
+    padding: 3vw;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            url("../images/cover/facade-top-left.png") top left no-repeat,
+            url("../images/cover/facade-top-right.png") top right no-repeat,
+            url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
+            url("../images/cover/facade-bottom-right.png") bottom right no-repeat;
+        background-size: 250px 250px, 250px 250px, 250px 250px;
+        opacity: 0.4; // control transparency
+        pointer-events: none; // make sure it doesn’t block clicks
+    }
+
+
+    .brides-detail-container {
+        text-align: center;
+        // margin-top: 10vh;
+        // margin-bottom: 20px;
+        color: $brown-border;
+
+        h2 {
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+
+        p {
+            color: $brown-border;
+        }
+
+        &.parent {
+            margin-top: 10vh;
+            margin-bottom: 20px;
+        }
+
+        &.brides {
+
+            h2 {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .invitation-salutation-container {
+        margin: 50px 30px;
+        text-align: center;
+
+        p {
+            color: $brown-border;
+            font-size: 14px;
+        }
+
+        .dotted-line {
+            width: 300px;
+            margin: 45px auto 10px;
+            border: 1px dotted $brown-border;
+        }
+    }
+
+}
