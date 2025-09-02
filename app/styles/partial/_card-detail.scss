@@ -3,11 +3,29 @@ $brown-border: #813e20;
 $gold: #FFBB5C;
 $gold-text-lighter: #fdc77a;
 
+
+h1,
+h2,
+h3,
+p {
+    color: $brown-border !important;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display';
+    font-weight: bolder;
+}
+
+p {
+    font-family: "classy_v";
+}
+
 .main-content-wrapper {
     position: relative;
-    height: 100vh;
     background: $background;
-    padding: 3vw;
+    padding: 3vw 3vw 10vw;
 
     &::before {
         content: "";
@@ -16,9 +34,14 @@ $gold-text-lighter: #fdc77a;
         background:
             url("../images/cover/facade-top-left.png") top left no-repeat,
             url("../images/cover/facade-top-right.png") top right no-repeat,
+
+            url("../images/cover/center-left.png") center left no-repeat,
+            url("../images/cover/center-right.png") center right no-repeat,
+
+
             url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
             url("../images/cover/facade-bottom-right.png") bottom right no-repeat;
-        background-size: 250px 250px, 250px 250px, 250px 250px;
+        background-size: 250px 250px, 250px 250px, 140px 240px, 140px 240px, 250px 250px;
         opacity: 0.4; // control transparency
         pointer-events: none; // make sure it doesn’t block clicks
     }
@@ -68,4 +91,204 @@ $gold-text-lighter: #fdc77a;
         }
     }
 
+    .wedding-details-container {
+        margin-top: 60px;
+        text-align: center;
+
+        .detail-container {
+            margin-top: 40px;
+        }
+
+        h2 {
+            font-weight: bolder;
+        }
+
+        h3 {
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .program-schedule {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 30px auto;
+        // max-width: 500px;
+        // text-align: left;
+
+        h2 {
+            color: white;
+            text-align: center;
+            font-family: 'Playfair Display';
+
+            @media only screen and (min-width: 1200px) {
+                font-size: 1.7rem;
+            }
+        }
+
+        .timeline {
+
+            @media only screen and (min-width: 1200px) {
+                margin: 0px 60px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 15px; // Adjust this based on your layout
+                top: 65px;
+                bottom: 0;
+                width: 2px;
+                // background-color: $brown-border;
+
+                @media only screen and (min-width: 1200px) {
+                    font-size: 1.5rem;
+                    left: 77px;
+                }
+            }
+
+            .program-item {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 8px;
+                // margin-left: 30px;
+
+                .time {
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    color: $gold-text-lighter;
+                    font-family: 'Playfair Display';
+                }
+
+                .event {
+                    font-size: 1rem;
+                    flex: 1;
+                    font-family: 'classy_v';
+                    text-align: center;
+
+                    @media only screen and (min-width: 1200px) {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                // Dot for the current event
+                &.current {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: -19px;
+                        top: 30px;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        // background-color: $brown-border;
+                        background: url("../images/cover/seperator-center.png") no-repeat left;
+                        background-size: 30px, 30px;
+                        animation: breathe 1.6s ease-in-out infinite;
+
+                        @media only screen and (min-width: 1200px) {
+                            left: -18px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .wishing-chat-container {
+        margin: 30px auto;
+        text-align: center;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .wish-scroller {
+            max-height: 600px;
+            overflow-y: scroll;
+
+            .wish-container {
+                max-width: 400px;
+                margin: 0 auto;
+
+                .wish-username {
+                    margin-bottom: 10px;
+                }
+
+                .wish-date {
+                    text-align: right;
+                    margin-top: 10px;
+                }
+            }
+
+            /* WebKit browsers */
+            &::-webkit-scrollbar {
+                width: 8px;
+                /* scrollbar width */
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+                /* track background */
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #b08968;
+                /* scrollbar color */
+                border-radius: 10px;
+                /* rounded edges */
+                border: 2px solid transparent;
+                /* spacing around thumb */
+                background-clip: content-box;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: #8c654b;
+                /* darker on hover */
+            }
+        }
+
+    }
+
+    .seperator {
+        // width: 500px;
+        height: 80px;
+        margin-top: 30px;
+        // background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            position: absolute;
+        }
+
+        .line {
+            width: 300px;
+            border: 1px solid $brown-border;
+        }
+    }
+
+}
+
+.flipdown.flipdown__theme-light .rotor-group-heading:before {
+    color: $brown-border;
+}
+
+.flipdown.flipdown__theme-light .rotor-leaf-rear,
+.flipdown.flipdown__theme-light .rotor-leaf-bottom,
+.flipdown.flipdown__theme-light .rotor-leaf-front,
+.flipdown.flipdown__theme-light .rotor-bottom,
+.flipdown.flipdown__theme-light .rotor-top {
+    background-color: #813e20 !important;
+    color: white !important;
 }

@@ -1,7 +1,7 @@
 "use strict";
 
 AOS.init();
-// document.body.classList.add('no-scroll');
+document.body.classList.add('no-scroll');
 document.getElementById('main-button').addEventListener('click', function () {
   var containerMain = document.querySelector('.container-main.card-cover-wrapper');
   var container = document.querySelector('.container');
