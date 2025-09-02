@@ -41,7 +41,7 @@ p {
 
             url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
             url("../images/cover/facade-bottom-right.png") bottom right no-repeat;
-        background-size: 250px 250px, 250px 250px, 140px 240px, 140px 240px, 250px 250px;
+        background-size: 250px 250px, 250px 250px, 140px 300px, 140px 300px, 250px 250px;
         opacity: 0.4; // control transparency
         pointer-events: none; // make sure it doesn’t block clicks
     }
@@ -96,7 +96,7 @@ p {
         text-align: center;
 
         .detail-container {
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         h2 {
@@ -214,6 +214,8 @@ p {
         .wish-scroller {
             max-height: 600px;
             overflow-y: scroll;
+            padding: 20px;
+            border: 1px solid;
 
             .wish-container {
                 max-width: 400px;

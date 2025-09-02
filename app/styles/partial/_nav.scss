@@ -1,5 +1,11 @@
 $nav-background: grey;
+$brown-border: #813e20;
 $nav-item: white;
+
+$background: #ffcb70;
+$brown-border: #813e20;
+$gold: #FFBB5C;
+$gold-text-lighter: #fdc77a;
 
 
 .bottom-nav {
@@ -7,15 +13,14 @@ $nav-item: white;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #aaa68e;
+  background-color: $brown-border;
   display: flex;
   justify-content: space-around;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   padding: 15px;
-  // border-top-left-radius: 20px;
-  // border-top-right-radius: 20px;
-  // animation: fade-in-bottom 1s ease-in-out;
+
+
 
   .nav-item {
     flex: 1;
@@ -87,7 +92,7 @@ $nav-item: white;
     }
 
     .modal-header {
-      background-color: #aaa68e;
+      background-color: $brown-border;
       padding: 20px 20px;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
@@ -96,7 +101,7 @@ $nav-item: white;
       align-items: center;
 
       h2 {
-        color: #fff;
+        color: white !important;
         font-family: 'classy_v';
         font-size: 1.5rem;
         margin-bottom: 0 !important;
@@ -283,14 +288,14 @@ $nav-item: white;
         p {
           color: black;
         }
-        
-      .message.success {
-        color: green;
-      }
 
-      .message.error {
-        color: red;
-      }
+        .message.success {
+          color: green;
+        }
+
+        .message.error {
+          color: red;
+        }
       }
 
     }

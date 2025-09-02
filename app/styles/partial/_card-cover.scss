@@ -16,7 +16,7 @@ body {
         url("../images/cover/facade-bottom-right.png") bottom right no-repeat,
         $background;
     background-size: 250px 250px, 250px 250px, 1000px 1000px, 250px 250px;
-    // height: 100vh;
+    height: 100vh;
 
     .center-container {
         position: absolute;
@@ -34,10 +34,12 @@ body {
 
 
         .text-walimatulurus {
-            // display: flex;
-            // flex-direction: column;
             text-align: center;
             font-size: 16px;
+
+            p {
+                color: white !important;
+            }
 
             img {
                 width: 100px;
@@ -46,7 +48,7 @@ body {
         }
 
         .text-initial {
-            
+
             img {
                 width: 300px;
             }
@@ -54,12 +56,11 @@ body {
 
         .text-date-location {
             text-align: center;
+
+            p {
+                color: white !important;
+            }
         }
     }
 
-}
-
-
-.bottom-nav {
-    display: none;
 }
