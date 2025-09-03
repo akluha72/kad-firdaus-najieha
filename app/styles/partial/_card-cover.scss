@@ -1,6 +1,6 @@
 $background: #ffcb70;
 $brown-border: #813e20;
-$gold: #FFBB5C;
+$gold: #ffbb5c;
 $gold-text-lighter: #fdc77a;
 
 body {
@@ -15,7 +15,19 @@ body {
         url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
         url("../images/cover/facade-bottom-right.png") bottom right no-repeat,
         $background;
-    background-size: 250px 250px, 250px 250px, 1000px 1000px, 250px 250px;
+    background-size:
+        200px 200px,
+        200px 200px,
+        650px 650px,
+        200px 200px;
+
+    @media only screen and (min-width: 1200px) {
+        background-size:
+            250px 250px,
+            250px 250px,
+            1000px 1000px,
+            250px 250px;
+    }
     height: 100vh;
 
     .center-container {
@@ -26,12 +38,16 @@ body {
         align-items: center;
         color: white;
         background-color: $brown-border;
-        height: 540px;
+        height: 460px;
         width: 300px;
         margin: 0 auto;
-        transform: translate(50%, 55%);
+        transform: translate(20%, 50%);
         border-radius: 30px;
 
+        @media only screen and (min-width: 1200px) {
+            height: 540px;
+            transform: translate(50%, 55%);
+        }
 
         .text-walimatulurus {
             text-align: center;
@@ -48,7 +64,6 @@ body {
         }
 
         .text-initial {
-
             img {
                 width: 300px;
             }
@@ -62,5 +77,4 @@ body {
             }
         }
     }
-
 }

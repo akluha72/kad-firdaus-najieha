@@ -1,8 +1,7 @@
 $background: #ffcb70;
 $brown-border: #813e20;
-$gold: #FFBB5C;
+$gold: #ffbb5c;
 $gold-text-lighter: #fdc77a;
-
 
 h1,
 h2,
@@ -14,12 +13,21 @@ p {
 h1,
 h2,
 h3 {
-    font-family: 'Playfair Display';
+    font-family: "Playfair Display";
     font-weight: bolder;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 0.9rem;
 }
 
 p {
     font-family: "classy_v";
+    font-size: 0.8rem !important;
 }
 
 .main-content-wrapper {
@@ -34,18 +42,28 @@ p {
         background:
             url("../images/cover/facade-top-left.png") top left no-repeat,
             url("../images/cover/facade-top-right.png") top right no-repeat,
-
             url("../images/cover/center-left.png") center left no-repeat,
             url("../images/cover/center-right.png") center right no-repeat,
-
-
             url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
             url("../images/cover/facade-bottom-right.png") bottom right no-repeat;
-        background-size: 250px 250px, 250px 250px, 140px 300px, 140px 300px, 250px 250px;
-        opacity: 0.4; // control transparency
-        pointer-events: none; // make sure it doesn’t block clicks
+        background-size:
+            180px 180px,
+            180px 180px,
+            100px 180px,
+            100px 180px,
+            180px 180px,
+            180px 180px;
+        opacity: 0.4; 
+        pointer-events: none;
+        @media only screen and (min-width: 1200px) {
+            background-size:
+                250px 250px,
+                250px 250px,
+                140px 300px,
+                140px 300px,
+                250px 250px;
+        }
     }
-
 
     .brides-detail-container {
         text-align: center;
@@ -68,7 +86,6 @@ p {
         }
 
         &.brides {
-
             h2 {
                 text-transform: capitalize;
             }
@@ -117,6 +134,7 @@ p {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        align-items: center;
         margin: 30px auto;
         // max-width: 500px;
         // text-align: left;
@@ -124,7 +142,7 @@ p {
         h2 {
             color: white;
             text-align: center;
-            font-family: 'Playfair Display';
+            font-family: "Playfair Display";
 
             @media only screen and (min-width: 1200px) {
                 font-size: 1.7rem;
@@ -132,7 +150,6 @@ p {
         }
 
         .timeline {
-
             @media only screen and (min-width: 1200px) {
                 margin: 0px 60px;
             }
@@ -158,19 +175,20 @@ p {
                 flex-direction: column;
                 align-items: center;
                 padding: 8px;
+                max-width: 300px;
                 // margin-left: 30px;
 
                 .time {
-                    font-size: 1.3rem;
+                    font-size: 1.0rem !important;
                     font-weight: bold;
                     color: $gold-text-lighter;
-                    font-family: 'Playfair Display';
+                    font-family: "Playfair Display";
                 }
 
                 .event {
                     font-size: 1rem;
                     flex: 1;
-                    font-family: 'classy_v';
+                    font-family: "classy_v";
                     text-align: center;
 
                     @media only screen and (min-width: 1200px) {
@@ -184,7 +202,7 @@ p {
                         content: "";
                         position: absolute;
                         left: -19px;
-                        top: 30px;
+                        top: 18px;
                         width: 30px;
                         height: 30px;
                         border-radius: 50%;
@@ -200,7 +218,6 @@ p {
                 }
             }
         }
-
     }
 
     .wishing-chat-container {
@@ -257,7 +274,6 @@ p {
                 /* darker on hover */
             }
         }
-
     }
 
     .seperator {
@@ -279,7 +295,6 @@ p {
             border: 1px solid $brown-border;
         }
     }
-
 }
 
 .flipdown.flipdown__theme-light .rotor-group-heading:before {
