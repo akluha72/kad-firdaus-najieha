@@ -20,15 +20,12 @@ body {
         url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
         url("../images/cover/facade-bottom-right.png") bottom right no-repeat,
         $background;
-    background-size: 150px 150px, 150px 150px, 650px 650px, 150px 150px;
+    background-size: 150px 150px, 150px 150px, 600px 600px, 150px 150px;
 
     @media only screen and (min-width: 1200px) {
         background-size: 250px 250px, 250px 250px, 1000px 1000px, 250px 250px;
 
     }
-
-
-
 
     .center-container {
         // position: absolute;
@@ -82,4 +79,41 @@ body {
         }
     }
 
+    .hold-btn {
+        position: absolute;
+        top: 88vh;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px solid $brown-border;
+        border-radius: 50px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: #813e20;
+        user-select: none;
+    }
+
+    .hold-btn .fill {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background: #813e20;
+        transition: height 3s linear;
+        /* Animate fill */
+        z-index: 0;
+        border-radius: 50%;
+    }
+
+    .hold-btn span {
+        position: relative;
+        z-index: 1;
+    }
 }
