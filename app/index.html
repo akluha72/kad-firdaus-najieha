@@ -199,50 +199,8 @@
       <div class="wishing-chat-container">
         <h2>Ucapan:</h2>
         <div class="wish-scroller">
-          <div class="wish-container">
-            <p class="wish-username"> - lutfi akmal - </p>
-            <p class="wish-text">Congratulations on finding your perfect match! May your love story continue to inspire
-              everyone around
-              you.
-              Here's to a future filled with adventure and joy!
-            </p>
-            <p class="wish-date">
-              - 16 aug 25
-            </p>
-          </div>
-
-          <div class="wish-container">
-            <p class="wish-username"> - mad jaim - </p>
-            <p class="wish-text">
-              Congratulations on finding your perfect match!
-              Here's to a future filled with adventure and joy!
-            </p>
-            <p class="wish-date">
-              - 16 aug 25
-            </p>
-          </div>
-
-          <div class="wish-container">
-            <p class="wish-username"> - lutfi akmal - </p>
-            <p class="wish-text">Congratulations on finding your perfect match! May your love story continue to inspire
-              everyone around
-              you.
-              Here's to a future filled with adventure and joy!
-            </p>
-            <p class="wish-date">
-              - 16 aug 25
-            </p>
-          </div>
-
-          <div class="wish-container">
-            <p class="wish-username"> - mad jaim - </p>
-            <p class="wish-text">
-              Congratulations on finding your perfect match!
-              Here's to a future filled with adventure and joy!
-            </p>
-            <p class="wish-date">
-              - 16 aug 25
-            </p>
+          <div class="wish-container" id="wishes">
+           
           </div>
         </div>
       </div>
@@ -261,7 +219,7 @@
     <div id="contactModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Kenalan</h2>
+          <h2>Contact</h2>
           <span class="close" onclick="closeModal('contactModal')">&times;</span>
         </div>
         <div class="modal-body">
@@ -337,7 +295,7 @@
     <div id="locationModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Lokasi</h2>
+          <h2>Location</h2>
           <span class="close" onclick="closeModal('locationModal')">&times;</span>
         </div>
         <div class="modal-body">
@@ -388,19 +346,19 @@
     <div id="rsvpModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>RSVP</h2>
+          <h2>Guest Wishing Card</h2>
           <span class="close" onclick="closeModal('rsvpModal')">&times;</span>
         </div>
         <div class="modal-body">
           <div class="rsvp-wrapper">
-            <form id="rsvp_form" method="post">
+            <div id="rsvp_form">
               <div class="input-group">
-                <input type="text" id="nama" placeholder="Nama" required />
+                <input type="text" id="name" placeholder="Nama" required />
               </div>
               <div class="input-group">
-                <input type="tel" id="telefon" placeholder="No. Telefon" required />
+                <textarea id="wish" required></textarea>
               </div>
-              <div class="counter-group">
+              <!-- <div class="counter-group">
                 <div class="counter">
                   <label for="dewasa">Jumlah Dewasa</label>
                   <div class="counter-controls">
@@ -417,55 +375,56 @@
                     <button type="button" onclick="increment('kanak')">+</button>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="modal-buttons">
-                <button type="submit" class="submit-btn"><i class="far fa-paper-plane"></i> Hantar </button>
+                <button onclick="submitWish()" class="submit-btn"><i class="far fa-paper-plane"></i> Submit </button>
               </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="bottom-nav ">
-    <a href="#contact" class="nav-item" onclick="openModal('contactModal')">
-      <i class="fas fa-phone-alt"></i>
-      <span>Contact</span>
-    </a>
-    <a href="#location" class="nav-item " onclick="openModal('locationModal')">
-      <i class="fas fa-map"></i>
-      <span>Location</span>
-    </a>
-    <a href="javascript:location.reload()" class="nav-item active">
-      <div class="icon-circle">
-        <i class="fas fa-home"></i>
-      </div>
-      <span>Home</span>
-    </a>
-    <a href="#calendar" class="nav-item" onclick="openModal('calendarModal')">
-      <i class="fas fa-calendar-alt"></i>
-      <span>Calendar</span>
-    </a>
-    <a href="#rsvp" class="nav-item" onclick="openModal('rsvpModal')">
-      <i class="fas fa-clipboard-list"></i>
-      <span>RSVP</span>
-    </a>
-  </div>
+    <div class="bottom-nav ">
+      <a href="#contact" class="nav-item" onclick="openModal('contactModal')">
+        <i class="fas fa-phone-alt"></i>
+        <span>Contact</span>
+      </a>
+      <a href="#location" class="nav-item " onclick="openModal('locationModal')">
+        <i class="fas fa-map"></i>
+        <span>Location</span>
+      </a>
+      <a href="javascript:location.reload()" class="nav-item active">
+        <div class="icon-circle">
+          <i class="fas fa-home"></i>
+        </div>
+        <span>Home</span>
+      </a>
+      <a href="#calendar" class="nav-item" onclick="openModal('calendarModal')">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Calendar</span>
+      </a>
+      <a href="#rsvp" class="nav-item" onclick="openModal('rsvpModal')">
+        <!-- <i class="fas fa-clipboard-list"></i> -->
+        <i class="fas fa-pen" style="color: #ffffff;"></i>
+        <span>Wishes</span>
+      </a>
+    </div>
 
-  <!-- build:js scripts/vendor.js -->
-  <script src="/node_modules/flipdown/dist/flipdown.js"></script>
-  <!-- endbuild -->
+    <!-- build:js scripts/vendor.js -->
+    <script src="/node_modules/flipdown/dist/flipdown.js"></script>
+    <!-- endbuild -->
 
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
-  <script src="scripts/form.js"></script>
-  <script src="scripts/flipdown.js"></script>
-  <script src="scripts/nav.js"></script>
-  <script src="scripts/calendar.js"></script>
-  <script src="scripts/rsvp.js"></script>
-  <script src="scripts/schedule.js"></script>
-  <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/form.js"></script>
+    <script src="scripts/flipdown.js"></script>
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/calendar.js"></script>
+    <script src="scripts/rsvp.js"></script>
+    <script src="scripts/schedule.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

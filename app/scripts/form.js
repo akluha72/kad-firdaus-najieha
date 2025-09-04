@@ -1,28 +1,68 @@
-document.getElementById('rsvp_form').addEventListener('submit', function (e) {
-  e.preventDefault();
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzp03InwEWZq9aN-jfvmtloI5dOWzIsHKe4XlcUvbrZbiGZNkW8Ezhdqc2SJgRtw0WA/exec";
 
-  const data = {
-    nama: document.getElementById('nama').value,
-    telefon: document.getElementById('telefon').value,
-    dewasa: document.getElementById('dewasa').value,
-    kanak: document.getElementById('kanak').value,
-  };
+// Send new wish
+function submitWish() {
+  const name = document.getElementById("name").value;
+  const wish = document.getElementById("wish").value;
 
-  fetch('https://script.google.com/macros/s/AKfycbzPF1JMQ6K1ODMhe6r80Q_CxSyAVtDvAV_Krdb96rnQYimT1DaAL0JK_fMDcDCsPcl2/exec', { // Replace with your Web app URL
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: JSON.stringify({ name, wish })
   })
-  .then(response => {
-    replaceModalContent('Terima kasih! rsvp anda telah berjaya dihantar.', 'success');
-  })
-  .catch(error => {
-    replaceModalContent('Maaf, terdapat masalah semasa menghantar maklumat anda. Sila cuba lagi.', 'error');
-  });
-});
+    .then(res => res.json())
+    .then(data => {
+      alert("Wish submitted! 🎉");
+      loadWishes(); // reload wishes after submit
+    });
+}
+
+// Load wishes
+function loadWishes() {
+  fetch(SCRIPT_URL)
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById("wishes");
+      list.innerHTML = "";
+
+      data.forEach(item => {
+        // Format the date nicely (optional)
+        const date = new Date(item.timestamp);
+        const formattedDate = date.toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "short",
+          year: "2-digit"
+        });
+
+        // Create container
+        const wishDiv = document.createElement("div");
+        wishDiv.classList.add("wish-container");
+
+        // Username
+        const username = document.createElement("p");
+        username.classList.add("wish-username");
+        username.textContent = `- ${item.name} -`;
+
+        // Wish text
+        const wishText = document.createElement("p");
+        wishText.classList.add("wish-text");
+        wishText.textContent = item.wish;
+
+        // Date
+        const wishDate = document.createElement("p");
+        wishDate.classList.add("wish-date");
+        wishDate.textContent = `- ${formattedDate} -`;
+
+        // Append children
+        wishDiv.appendChild(username);
+        wishDiv.appendChild(wishText);
+        wishDiv.appendChild(wishDate);
+
+        // Add to list
+        list.appendChild(wishDiv);
+      });
+    });
+}
+window.onload = loadWishes;
 
 // Function to replace modal content
 function replaceModalContent(message, type) {
@@ -33,16 +73,3 @@ function replaceModalContent(message, type) {
     </div>
   `;
 }
-
-function increment(id) {
-  const input = document.getElementById(id);
-  input.value = parseInt(input.value) + 1;
-}
-
-function decrement(id) {
-  const input = document.getElementById(id);
-  if (parseInt(input.value) > 0) {
-    input.value = parseInt(input.value) - 1;
-  }
-}
- 
