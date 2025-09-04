@@ -18,14 +18,19 @@ function submitWish() {
 
 // Load wishes
 function loadWishes() {
+  const loader = document.getElementById("loader");
+  const list = document.getElementById("wishes");
+
+  // Show loader, clear old wishes
+  loader.style.display = "block";
+  list.innerHTML = "";
+
   fetch(SCRIPT_URL)
     .then(res => res.json())
     .then(data => {
-      const list = document.getElementById("wishes");
       list.innerHTML = "";
 
       data.forEach(item => {
-        // Format the date nicely (optional)
         const date = new Date(item.timestamp);
         const formattedDate = date.toLocaleDateString("en-GB", {
           day: "2-digit",
@@ -33,35 +38,34 @@ function loadWishes() {
           year: "2-digit"
         });
 
-        // Create container
         const wishDiv = document.createElement("div");
         wishDiv.classList.add("wish-container");
 
-        // Username
         const username = document.createElement("p");
         username.classList.add("wish-username");
         username.textContent = `- ${item.name} -`;
 
-        // Wish text
         const wishText = document.createElement("p");
         wishText.classList.add("wish-text");
         wishText.textContent = item.wish;
 
-        // Date
         const wishDate = document.createElement("p");
         wishDate.classList.add("wish-date");
         wishDate.textContent = `- ${formattedDate} -`;
 
-        // Append children
         wishDiv.appendChild(username);
         wishDiv.appendChild(wishText);
         wishDiv.appendChild(wishDate);
 
-        // Add to list
         list.appendChild(wishDiv);
       });
+    })
+    .finally(() => {
+      // Hide loader after loading
+      loader.style.display = "none";
     });
 }
+
 window.onload = loadWishes;
 
 // Function to replace modal content

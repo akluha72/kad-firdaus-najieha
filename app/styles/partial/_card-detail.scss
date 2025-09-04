@@ -18,8 +18,18 @@ h3 {
     font-weight: bolder;
 }
 
+h2 {
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 0.8rem;
+    font-weight: bolder;
+}
+
 p {
     font-family: "classy_v";
+    font-size: 12px;
 }
 
 .main-content-wrapper {
@@ -31,6 +41,8 @@ p {
         content: "";
         position: absolute;
         inset: 0;
+        opacity: 0.4; // control transparency
+        pointer-events: none; // make sure it doesn’t block clicks
         background:
             url("../images/cover/facade-top-left.png") top left no-repeat,
             url("../images/cover/facade-top-right.png") top right no-repeat,
@@ -41,9 +53,13 @@ p {
 
             url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
             url("../images/cover/facade-bottom-right.png") bottom right no-repeat;
-        background-size: 250px 250px, 250px 250px, 140px 300px, 140px 300px, 250px 250px;
-        opacity: 0.4; // control transparency
-        pointer-events: none; // make sure it doesn’t block clicks
+        background-size: 150px 150px, 150px 150px, 80px 180px, 80px 180px, 150px 150px;
+
+        @media only screen and (min-width: 1200px) {
+            background-size: 250px 250px, 250px 250px, 140px 300px, 140px 300px, 250px 250px;
+        }
+
+
     }
 
 
@@ -92,8 +108,12 @@ p {
     }
 
     .wedding-details-container {
-        margin-top: 60px;
+        margin-top: 30px;
         text-align: center;
+
+        @media only screen and (min-width: 1200px) {
+            margin-top: 60px;
+        }
 
         .detail-container {
             margin-top: 20px;
@@ -101,10 +121,12 @@ p {
 
         h2 {
             font-weight: bolder;
+            font-size: 20px !important;
         }
 
         h3 {
             font-weight: 600;
+            font-size: 16px;
         }
 
         p {
@@ -118,13 +140,14 @@ p {
         flex-direction: column;
         gap: 10px;
         margin: 30px auto;
-        // max-width: 500px;
-        // text-align: left;
+
 
         h2 {
             color: white;
             text-align: center;
             font-family: 'Playfair Display';
+            font-size: 20px !important;
+            font-weight: bolder;
 
             @media only screen and (min-width: 1200px) {
                 font-size: 1.7rem;
@@ -161,14 +184,14 @@ p {
                 // margin-left: 30px;
 
                 .time {
-                    font-size: 1.3rem;
+                    font-size: 16px;
                     font-weight: bold;
                     color: $gold-text-lighter;
                     font-family: 'Playfair Display';
                 }
 
                 .event {
-                    font-size: 1rem;
+                    font-size: 14px;
                     flex: 1;
                     font-family: 'classy_v';
                     text-align: center;
@@ -183,14 +206,13 @@ p {
                     &::before {
                         content: "";
                         position: absolute;
-                        left: -19px;
-                        top: 30px;
+                        left: 110px;
+                        top: 7px;
                         width: 30px;
                         height: 30px;
                         border-radius: 50%;
-                        // background-color: $brown-border;
                         background: url("../images/cover/seperator-center.png") no-repeat left;
-                        background-size: 30px, 30px;
+                        background-size: 15px, 15px;
                         animation: breathe 1.6s ease-in-out infinite;
 
                         @media only screen and (min-width: 1200px) {
@@ -213,6 +235,7 @@ p {
 
         .wish-scroller {
             max-height: 600px;
+            min-height: 600px;
             overflow-y: scroll;
             padding: 20px;
             // border: 1px solid;
@@ -223,7 +246,7 @@ p {
 
                 .wish-username {
                     margin-bottom: 10px;
-                    font-size: 13px;
+                    font-size: 15px;
                 }
 
                 .wish-text {
@@ -278,6 +301,7 @@ p {
 
         img {
             position: absolute;
+            width: 50px;
         }
 
         .line {
@@ -299,4 +323,34 @@ p {
 .flipdown.flipdown__theme-light .rotor-top {
     background-color: #813e20 !important;
     color: white !important;
+}
+
+.flipdown.flipdown__theme-light .rotor-group:nth-child(n+2):nth-child(-n+3):before,
+.flipdown.flipdown__theme-light .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+    background-color: #813e20 !important;
+
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    /* Light grey */
+    border-top: 4px solid #813e20;
+    /* Custom color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+    /* hidden by default */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

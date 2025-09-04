@@ -8,6 +8,11 @@ body {
 }
 
 .card-cover-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background:
         url("../images/cover/facade-top-left.png") top left no-repeat,
         url("../images/cover/facade-top-right.png") top right no-repeat,
@@ -15,23 +20,33 @@ body {
         url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
         url("../images/cover/facade-bottom-right.png") bottom right no-repeat,
         $background;
-    background-size: 250px 250px, 250px 250px, 1000px 1000px, 250px 250px;
-    height: 100vh;
+    background-size: 150px 150px, 150px 150px, 650px 650px, 150px 150px;
+
+    @media only screen and (min-width: 1200px) {
+        background-size: 250px 250px, 250px 250px, 1000px 1000px, 250px 250px;
+
+    }
+
+
+
 
     .center-container {
-        position: absolute;
+        // position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         color: white;
         background-color: $brown-border;
-        height: 540px;
-        width: 300px;
+        height: 400px;
+        width: 240px;
         margin: 0 auto;
-        transform: translate(50%, 55%);
         border-radius: 30px;
 
+        @media only screen and (min-width: 1200px) {
+            height: 540px;
+            width: 300px;
+        }
 
         .text-walimatulurus {
             text-align: center;
@@ -50,7 +65,11 @@ body {
         .text-initial {
 
             img {
-                width: 300px;
+                width: 220px;
+
+                @media only screen and (min-width: 1200px) {
+                    width: 300px;
+                }
             }
         }
 

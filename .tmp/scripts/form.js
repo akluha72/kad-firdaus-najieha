@@ -22,47 +22,42 @@ function submitWish() {
 
 // Load wishes
 function loadWishes() {
+  var loader = document.getElementById("loader");
+  var list = document.getElementById("wishes");
+
+  // Show loader, clear old wishes
+  loader.style.display = "block";
+  list.innerHTML = "";
   fetch(SCRIPT_URL).then(function (res) {
     return res.json();
   }).then(function (data) {
-    var list = document.getElementById("wishes");
     list.innerHTML = "";
     data.forEach(function (item) {
-      // Format the date nicely (optional)
       var date = new Date(item.timestamp);
       var formattedDate = date.toLocaleDateString("en-GB", {
         day: "2-digit",
         month: "short",
         year: "2-digit"
       });
-
-      // Create container
       var wishDiv = document.createElement("div");
       wishDiv.classList.add("wish-container");
-
-      // Username
       var username = document.createElement("p");
       username.classList.add("wish-username");
       username.textContent = "- ".concat(item.name, " -");
-
-      // Wish text
       var wishText = document.createElement("p");
       wishText.classList.add("wish-text");
       wishText.textContent = item.wish;
-
-      // Date
       var wishDate = document.createElement("p");
       wishDate.classList.add("wish-date");
       wishDate.textContent = "- ".concat(formattedDate, " -");
-
-      // Append children
       wishDiv.appendChild(username);
       wishDiv.appendChild(wishText);
       wishDiv.appendChild(wishDate);
-
-      // Add to list
       list.appendChild(wishDiv);
     });
+  }).finally(function () {
+    // Hide loader after loading
+    loader.style.display = "none";
   });
 }
 window.onload = loadWishes;
