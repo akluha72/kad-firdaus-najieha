@@ -82,7 +82,7 @@
     rel="stylesheet">
 </head>
 
-<body>
+<body class="no-scroll">
   <div class="card-cover-wrapper">
     <!-- Background corner images -->
     <div class="bg-img top-left" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500"></div>
@@ -93,7 +93,7 @@
 
     <!-- Main content -->
     <div class="center-container" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1400">
-      <div class="text-walimatulurus"  data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1800">
+      <div class="text-walimatulurus" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1800">
         <img src="images/cover/arabic-walimatulurus-cropped.png" alt="walimatulurus">
         <p>MAJLIS BERTAUT KASIH</p>
       </div>
@@ -109,8 +109,6 @@
     <div class="button-con" data-aos="fade-up" data-aos-delay="1800" data-aos-offset="10" data-aos-duration="1000">
       <button id="main-button">See More Details</button>
     </div>
-  </div>
-
   </div>
 
   <div class="content-wrapper">
@@ -400,46 +398,47 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="bottom-nav ">
-      <a href="#contact" class="nav-item" onclick="openModal('contactModal')">
-        <i class="fas fa-phone-alt"></i>
-        <span>Contact</span>
-      </a>
-      <a href="#location" class="nav-item " onclick="openModal('locationModal')">
-        <i class="fas fa-map"></i>
-        <span>Location</span>
-      </a>
-      <a href="javascript:location.reload()" class="nav-item active">
-        <div class="icon-circle">
-          <i class="fas fa-home"></i>
-        </div>
-        <span>Home</span>
-      </a>
-      <a href="#calendar" class="nav-item" onclick="openModal('calendarModal')">
-        <i class="fas fa-calendar-alt"></i>
-        <span>Calendar</span>
-      </a>
-      <a href="#rsvp" class="nav-item" onclick="openModal('rsvpModal')">
-        <!-- <i class="fas fa-clipboard-list"></i> -->
-        <i class="fas fa-pen" style="color: #ffffff;"></i>
-        <span>Wishes</span>
-      </a>
-    </div>
+  <div class="bottom-nav ">
+    <a href="#contact" class="nav-item" onclick="openModal('contactModal')">
+      <i class="fas fa-phone-alt"></i>
+      <span>Contact</span>
+    </a>
+    <a href="#location" class="nav-item " onclick="openModal('locationModal')">
+      <i class="fas fa-map"></i>
+      <span>Location</span>
+    </a>
+    <a href="javascript:location.reload()" class="nav-item active">
+      <div class="icon-circle">
+        <i class="fas fa-home"></i>
+      </div>
+      <span>Home</span>
+    </a>
+    <a href="#calendar" class="nav-item" onclick="openModal('calendarModal')">
+      <i class="fas fa-calendar-alt"></i>
+      <span>Calendar</span>
+    </a>
+    <a href="#rsvp" class="nav-item" onclick="openModal('rsvpModal')">
+      <!-- <i class="fas fa-clipboard-list"></i> -->
+      <i class="fas fa-pen" style="color: #ffffff;"></i>
+      <span>Wishes</span>
+    </a>
+  </div>
 
-    <!-- build:js scripts/vendor.js -->
-    <script src="/node_modules/flipdown/dist/flipdown.js"></script>
-    <!-- endbuild -->
+  <!-- build:js scripts/vendor.js -->
+  <script src="/node_modules/flipdown/dist/flipdown.js"></script>
+  <!-- endbuild -->
 
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/form.js"></script>
-    <script src="scripts/flipdown.js"></script>
-    <script src="scripts/nav.js"></script>
-    <script src="scripts/calendar.js"></script>
-    <script src="scripts/rsvp.js"></script>
-    <script src="scripts/schedule.js"></script>
-    <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <script src="scripts/form.js"></script>
+  <script src="scripts/flipdown.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script src="scripts/calendar.js"></script>
+  <script src="scripts/rsvp.js"></script>
+  <script src="scripts/schedule.js"></script>
+  <!-- endbuild -->
 </body>
 
 </html>
