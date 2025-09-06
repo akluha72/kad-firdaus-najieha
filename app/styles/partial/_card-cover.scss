@@ -13,22 +13,66 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background:
-        url("../images/cover/facade-top-left.png") top left no-repeat,
-        url("../images/cover/facade-top-right.png") top right no-repeat,
-        url("../images/cover/facade-center.png") center center no-repeat,
-        url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
-        url("../images/cover/facade-bottom-right.png") bottom right no-repeat,
-        $background;
-    background-size: 150px 150px, 150px 150px, 600px 600px, 150px 150px;
+    overflow: hidden;
+    position: relative;
+    background: $background;
 
-    @media only screen and (min-width: 1200px) {
-        background-size: 250px 250px, 250px 250px, 1000px 1000px, 250px 250px;
+    .bg-img {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 150px;
+        height: 150px;
+
+        @media only screen and (min-width: 1200px) {
+            width: 250px;
+            height: 250px;
+        }
+
+
+        &.top-left {
+            top: 0;
+            left: 0;
+            background-image: url("../images/cover/facade-top-left.png");
+        }
+
+        &.top-right {
+            top: 0;
+            right: 0;
+            background-image: url("../images/cover/facade-top-right.png");
+        }
+
+        &.bottom-left {
+            bottom: 0;
+            left: 0;
+            background-image: url("../images/cover/facade-bottom-left.png");
+        }
+
+        &.bottom-right {
+            bottom: 0;
+            right: 0;
+            background-image: url("../images/cover/facade-bottom-right.png");
+        }
+
+        &.center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url("../images/cover/facade-center.png");
+            width: 600px;
+            height: 600px;
+
+            @media only screen and (min-width: 1200px) {
+                width: 1000px;
+                height: 1000px;
+            }
+        }
 
     }
 
     .center-container {
         // position: absolute;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -77,43 +121,48 @@ body {
                 color: white !important;
             }
         }
+
+
     }
 
-    .hold-btn {
-        position: absolute;
-        top: 88vh;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: transparent;
-        border: 1px solid $brown-border;
-        border-radius: 50px;
-        overflow: hidden;
+    .button-con {
         display: flex;
         justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        font-family: sans-serif;
-        font-weight: bold;
-        color: #813e20;
-        user-select: none;
-    }
-
-    .hold-btn .fill {
+        margin-top: 80px;
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 0%;
-        background: #813e20;
-        transition: height 3s linear;
-        /* Animate fill */
-        z-index: 0;
-        border-radius: 50%;
+        top: 75vh;
+
+        button {
+            background-color: #bfb094;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-family: "Bodoni Moda SC", serif;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background-color: #8c7e65;
+                transform: translateY(-2px);
+            }
+
+            &:active {
+                transform: translateY(1px);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 
-    .hold-btn span {
-        position: relative;
-        z-index: 1;
+    to {
+        opacity: 1;
     }
 }

@@ -1,34 +1,16 @@
 AOS.init();
 
-let lastScrollTop = 0;
-const centerTop = document.querySelector('.center-top');
-
-window.addEventListener('scroll', function () {
-  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (currentScroll > lastScrollTop) {
-    // Scroll down
-    centerTop.classList.add('hidden');
-  } else {
-    // Scroll up
-    centerTop.classList.remove('hidden');
-  }
-
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-});
-
-
-const holdBtn = document.getElementById("holdButton");
-const fill = holdBtn.querySelector(".fill");
+const holdBtn = document.getElementById('holdButton');
+const fill = holdBtn.querySelector('.fill');
 let holdTimer;
 
 function startHold() {
   // Start fill animation
-  fill.style.height = "100%";
+  fill.style.height = '100%';
 
   // Trigger action after 3s
   holdTimer = setTimeout(() => {
-    if ("vibrate" in navigator) {
+    if ('vibrate' in navigator) {
       navigator.vibrate(200); // haptic feedback
     }
 
@@ -60,13 +42,13 @@ function startHold() {
 function cancelHold() {
   clearTimeout(holdTimer);
   // Reset fill
-  fill.style.height = "0%";
+  fill.style.height = '0%';
 }
 
 // Event listeners for hold action
-holdBtn.addEventListener("mousedown", startHold);
-holdBtn.addEventListener("touchstart", startHold);
+holdBtn.addEventListener('mousedown', startHold);
+holdBtn.addEventListener('touchstart', startHold);
 
-holdBtn.addEventListener("mouseup", cancelHold);
-holdBtn.addEventListener("mouseleave", cancelHold);
-holdBtn.addEventListener("touchend", cancelHold);
+holdBtn.addEventListener('mouseup', cancelHold);
+holdBtn.addEventListener('mouseleave', cancelHold);
+holdBtn.addEventListener('touchend', cancelHold);
