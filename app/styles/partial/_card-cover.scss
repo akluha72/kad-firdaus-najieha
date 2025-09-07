@@ -5,6 +5,7 @@ $gold-text-lighter: #fdc77a;
 
 body {
     border: 8px solid $brown-border;
+    background-color: $background;
 }
 
 .card-cover-wrapper {
@@ -79,7 +80,7 @@ body {
         align-items: center;
         color: white;
         background-color: $brown-border;
-        height: 400px;
+        height: 50vh;
         width: 240px;
         margin: 0 auto;
         border-radius: 30px;
@@ -104,10 +105,11 @@ body {
         }
 
         .text-initial {
+            display: flex;
+            justify-content: center;
 
             img {
-                width: 220px;
-
+                width: 80%;
                 @media only screen and (min-width: 1200px) {
                     width: 300px;
                 }

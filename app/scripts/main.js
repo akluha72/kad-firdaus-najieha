@@ -1,2 +1,18 @@
 AOS.init();
 
+document.getElementById('main-button').addEventListener('click', function () {
+    const cover = document.querySelector('.card-cover-wrapper');
+    const content = document.querySelector('.content-wrapper');
+    const bottomNav = document.querySelector('.bottom-nav');
+
+    // Fade out cover
+    cover.classList.add('fade-out');
+
+    // After fade, hide it and show content
+    setTimeout(() => {
+        cover.classList.add('hide');
+        content.classList.remove('hide');
+        bottomNav.classList.remove('hide');
+        document.body.classList.remove('no-scroll'); // Enable scrolling
+    }, 600); // match CSS transition duration
+});
