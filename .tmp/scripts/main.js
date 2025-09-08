@@ -78,13 +78,13 @@ function createSeparatorObserver() {
 
         // Add animation classes
         if (line && !line.classList.contains('line-fade-right')) {
-          console.log("adding animaiotn for the line");
+          console.log('adding animaiotn for the line');
           line.classList.add('line-fade-right');
         } else {
-          console.log("element cant be found");
+          console.log('element cant be found');
         }
         if (img && !img.classList.contains('img-fade-in')) {
-          console.log("adding animation for the bg image");
+          console.log('adding animation for the bg image');
           img.classList.add('img-fade-in');
         }
         console.log('Separator animation triggered');

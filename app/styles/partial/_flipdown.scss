@@ -11,9 +11,10 @@ $gold-text-lighter: #fdc77a;
   flex-direction: column;
   align-items: center;
 
-  h1 {
+  h2 {
     color: $gold-text-lighter;
     font-family: 'classy_v';
+    font-size: 26px !important;
   }
 
   .flipdown {
