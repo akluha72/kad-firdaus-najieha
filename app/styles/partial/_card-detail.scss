@@ -55,20 +55,18 @@ p {
             url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
             url("../images/cover/facade-bottom-right.png") bottom right no-repeat;
         background-size: 150px 150px, 150px 150px, 80px 180px, 80px 180px, 150px 150px;
+        animation: fadeInBg 1.5s ease forwards;
 
         @media only screen and (min-width: 1200px) {
             background-size: 250px 250px, 250px 250px, 140px 300px, 140px 300px, 250px 250px;
         }
-
-
     }
 
 
     .brides-detail-container {
         text-align: center;
-        // margin-top: 10vh;
-        // margin-bottom: 20px;
         color: $brown-border;
+
 
         h2 {
             margin-bottom: 0;
@@ -82,9 +80,12 @@ p {
         &.parent {
             margin-top: 10vh;
             margin-bottom: 20px;
+            animation: fadeInText 1.5s ease forwards;
+
         }
 
         &.brides {
+            animation: fadeInText 3.5s ease forwards;
 
             h2 {
                 text-transform: capitalize;
@@ -95,6 +96,8 @@ p {
     .invitation-salutation-container {
         margin: 50px 30px;
         text-align: center;
+        animation: fadeInText 2.5s ease forwards;
+
 
         p {
             color: $brown-border;
@@ -236,7 +239,7 @@ p {
 
         .wish-scroller {
             max-height: 600px;
-            min-height: 600px;
+            min-height: 200px;
             overflow-y: scroll;
             padding: 20px;
             // border: 1px solid;
@@ -291,23 +294,28 @@ p {
     }
 
     .seperator {
-        // width: 500px;
         height: 80px;
         margin-top: 30px;
-        // background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative; // important for absolute img
 
         img {
             position: absolute;
             width: 50px;
+            opacity: 0;
+            animation: fadeInImg 1s ease forwards;
+            animation-delay: 0.8s; // wait until line starts filling
         }
 
         .line {
             width: 300px;
             border: 1px solid $brown-border;
+            transform: scaleX(0); // start invisible
+            transform-origin: left; // animate from left
+            animation: fillLine 1s ease forwards;
         }
     }
 
@@ -346,6 +354,21 @@ p {
     /* hidden by default */
 }
 
+
+.fade-in {
+    animation: fadeInText 3.5s ease forwards;
+}
+
+.line-fade-right {
+    transform-origin: left; // animate from left
+    animation: fillLine 1s ease forwards;
+}
+
+.img-fade-in {
+    animation: fadeInImg 1s ease forwards;
+    animation-delay: 0.8s; // wait until line starts filling
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -353,5 +376,46 @@ p {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInBg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.4; // your target transparency
+    }
+}
+
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1; // your target transparency
+    }
+}
+
+@keyframes fillLine {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fadeInImg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
