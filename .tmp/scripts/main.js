@@ -14,7 +14,6 @@ function createAOSObserver() {
         observedElements.add(entry.target);
 
         // Refresh AOS when any new section becomes visible
-
         AOS.refresh();
       }
     });
@@ -54,6 +53,9 @@ document.getElementById('main-button').addEventListener('click', function () {
   // Show the second section and bottom-nav
   if (container && bottomNav) {
     setTimeout(function () {
+      setTimeout(function () {
+        document.querySelector('.splash-screen').classList.add('swipe-up');
+      }, 500);
       container.classList.remove('hide');
       container2.classList.remove('hide');
       bottomNav.classList.remove('hide');
@@ -61,65 +63,6 @@ document.getElementById('main-button').addEventListener('click', function () {
       // Start the AOS observer
       aosObserver = createAOSObserver();
     }, 500);
-  }
-});
-
-// Function to create separator animation observer
-function createSeparatorObserver() {
-  // Find all separator elements
-  var separators = document.querySelectorAll('.seperator');
-  if (separators.length === 0) return;
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        var separator = entry.target;
-        var line = separator.querySelector('.line');
-        var img = separator.querySelector('img');
-
-        // Add animation classes
-        if (line && !line.classList.contains('line-fade-right')) {
-          console.log('adding animaiotn for the line');
-          line.classList.add('line-fade-right');
-        } else {
-          console.log('element cant be found');
-        }
-        if (img && !img.classList.contains('img-fade-in')) {
-          console.log('adding animation for the bg image');
-          img.classList.add('img-fade-in');
-        }
-        console.log('Separator animation triggered');
-
-        // Optional: Stop observing this separator after animation starts
-        // observer.unobserve(separator);
-      }
-    });
-  }, {
-    threshold: 0.3,
-    // Trigger when 30% of separator is visible
-    rootMargin: '0px' // No margin, trigger exactly when visible
-  });
-
-  // Start observing all separators
-  separators.forEach(function (separator) {
-    observer.observe(separator);
-  });
-  return observer;
-}
-
-// Initialize separator observer when content becomes visible
-// You can call this function in your existing code when content-wrapper is shown
-function initSeparatorAnimations() {
-  // Small delay to ensure elements are rendered
-  setTimeout(function () {
-    createSeparatorObserver();
-  }, 100);
-}
-
-// Auto-initialize if content is already visible
-document.addEventListener('DOMContentLoaded', function () {
-  var contentWrapper = document.querySelector('.main-content-wrapper');
-  if (contentWrapper && !contentWrapper.classList.contains('hide')) {
-    initSeparatorAnimations();
   }
 });
 //# sourceMappingURL=main.js.map

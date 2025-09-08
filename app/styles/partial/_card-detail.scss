@@ -32,6 +32,32 @@ p {
     font-size: 12px;
 }
 
+.content-wrapper {
+    .splash-screen {
+        height: 100vh;
+        position: absolute;
+        z-index: 9999;
+        background-color: $brown-border;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+        transform: translateY(0);
+        opacity: 1;
+
+        img {
+            width: 80%;
+        }
+
+        &.swipe-up {
+            transform: translateY(-100%); // move out to top
+            // opacity: 0; // fade out
+            pointer-events: none; // avoid blocking clicks underneath
+        }
+    }
+}
+
+
 .main-content-wrapper {
     // display: none;
     position: relative;
