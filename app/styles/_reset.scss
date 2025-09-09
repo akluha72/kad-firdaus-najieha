@@ -135,7 +135,26 @@ body {
 }
 
 .no-scroll {
-  // overflow: hidden;
+  overflow: hidden;
+}
+
+.hide {
+  display: none !important;
+  // visibility:  hidden !important;
+}
+
+.card-cover-wrapper,
+.content-wrapper {
+  transition: opacity 0.6s ease;
+}
+
+.card-cover-wrapper {
+  opacity: 1;
+}
+
+.card-cover-wrapper.fade-out {
+  opacity: 0;
+  display: none !important;
 }
 
 a {

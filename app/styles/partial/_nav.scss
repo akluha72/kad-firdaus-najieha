@@ -198,12 +198,16 @@ $gold-text-lighter: #fdc77a;
         .input-group {
           margin: 10px;
 
-          input {
+          input, textarea {
             height: 30px;
             width: 100%;
             border: 1px solid #C79E4F;
             font-size: 16px;
             font-family: 'classy_v';
+          }
+
+          textarea {
+            height: 50px;
           }
         }
 

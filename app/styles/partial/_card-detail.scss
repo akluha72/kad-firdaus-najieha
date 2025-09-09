@@ -19,6 +19,7 @@ h3 {
 
 h2 {
     font-size: 1rem;
+<<<<<<< HEAD
 }
 
 h3 {
@@ -28,9 +29,48 @@ h3 {
 p {
     font-family: "classy_v";
     font-size: 0.8rem !important;
+=======
+>>>>>>> 411687419479f65bc898cd1b69454df4b104181d
 }
 
+h3 {
+    font-size: 0.8rem;
+    font-weight: bolder;
+}
+
+p {
+    font-family: "classy_v";
+    font-size: 12px;
+}
+
+.content-wrapper {
+    .splash-screen {
+        height: 100vh;
+        position: absolute;
+        z-index: 9999;
+        background-color: $brown-border;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+        transform: translateY(0);
+        opacity: 1;
+
+        img {
+            width: 80%;
+        }
+
+        &.swipe-up {
+            transform: translateY(-100%); // move out to top
+            // opacity: 0; // fade out
+            pointer-events: none; // avoid blocking clicks underneath
+        }
+    }
+}
+
+
 .main-content-wrapper {
+    // display: none;
     position: relative;
     background: $background;
     padding: 3vw 3vw 10vw;
@@ -39,6 +79,8 @@ p {
         content: "";
         position: absolute;
         inset: 0;
+        opacity: 0.4; // control transparency
+        pointer-events: none; // make sure it doesn’t block clicks
         background:
             url("../images/cover/facade-top-left.png") top left no-repeat,
             url("../images/cover/facade-top-right.png") top right no-repeat,
@@ -46,6 +88,7 @@ p {
             url("../images/cover/center-right.png") center right no-repeat,
             url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
             url("../images/cover/facade-bottom-right.png") bottom right no-repeat;
+<<<<<<< HEAD
         background-size:
             180px 180px,
             180px 180px,
@@ -62,14 +105,20 @@ p {
                 140px 300px,
                 140px 300px,
                 250px 250px;
+=======
+        background-size: 150px 150px, 150px 150px, 80px 180px, 80px 180px, 150px 150px;
+        animation: fadeInBg 1.5s ease forwards;
+
+        @media only screen and (min-width: 1200px) {
+            background-size: 250px 250px, 250px 250px, 140px 300px, 140px 300px, 250px 250px;
+>>>>>>> 411687419479f65bc898cd1b69454df4b104181d
         }
     }
 
     .brides-detail-container {
         text-align: center;
-        // margin-top: 10vh;
-        // margin-bottom: 20px;
         color: $brown-border;
+
 
         h2 {
             margin-bottom: 0;
@@ -83,9 +132,16 @@ p {
         &.parent {
             margin-top: 10vh;
             margin-bottom: 20px;
+            animation: fadeInText 1.5s ease forwards;
+
         }
 
         &.brides {
+<<<<<<< HEAD
+=======
+            animation: fadeInText 3.5s ease forwards;
+
+>>>>>>> 411687419479f65bc898cd1b69454df4b104181d
             h2 {
                 text-transform: capitalize;
             }
@@ -95,6 +151,8 @@ p {
     .invitation-salutation-container {
         margin: 50px 30px;
         text-align: center;
+        animation: fadeInText 2.5s ease forwards;
+
 
         p {
             color: $brown-border;
@@ -109,8 +167,12 @@ p {
     }
 
     .wedding-details-container {
-        margin-top: 60px;
+        margin-top: 30px;
         text-align: center;
+
+        @media only screen and (min-width: 1200px) {
+            margin-top: 60px;
+        }
 
         .detail-container {
             margin-top: 20px;
@@ -118,10 +180,12 @@ p {
 
         h2 {
             font-weight: bolder;
+            font-size: 20px !important;
         }
 
         h3 {
             font-weight: 600;
+            font-size: 16px;
         }
 
         p {
@@ -136,13 +200,18 @@ p {
         gap: 10px;
         align-items: center;
         margin: 30px auto;
-        // max-width: 500px;
-        // text-align: left;
+
 
         h2 {
             color: white;
             text-align: center;
+<<<<<<< HEAD
             font-family: "Playfair Display";
+=======
+            font-family: 'Playfair Display';
+            font-size: 20px !important;
+            font-weight: bolder;
+>>>>>>> 411687419479f65bc898cd1b69454df4b104181d
 
             @media only screen and (min-width: 1200px) {
                 font-size: 1.7rem;
@@ -179,14 +248,18 @@ p {
                 // margin-left: 30px;
 
                 .time {
+<<<<<<< HEAD
                     font-size: 1.0rem !important;
+=======
+                    font-size: 16px;
+>>>>>>> 411687419479f65bc898cd1b69454df4b104181d
                     font-weight: bold;
                     color: $gold-text-lighter;
                     font-family: "Playfair Display";
                 }
 
                 .event {
-                    font-size: 1rem;
+                    font-size: 14px;
                     flex: 1;
                     font-family: "classy_v";
                     text-align: center;
@@ -201,14 +274,18 @@ p {
                     &::before {
                         content: "";
                         position: absolute;
+<<<<<<< HEAD
                         left: -19px;
                         top: 18px;
+=======
+                        left: 110px;
+                        top: 7px;
+>>>>>>> 411687419479f65bc898cd1b69454df4b104181d
                         width: 30px;
                         height: 30px;
                         border-radius: 50%;
-                        // background-color: $brown-border;
                         background: url("../images/cover/seperator-center.png") no-repeat left;
-                        background-size: 30px, 30px;
+                        background-size: 15px, 15px;
                         animation: breathe 1.6s ease-in-out infinite;
 
                         @media only screen and (min-width: 1200px) {
@@ -226,13 +303,15 @@ p {
 
         h2 {
             margin-bottom: 20px;
+            font-size: 20px !important;
         }
 
         .wish-scroller {
             max-height: 600px;
+            min-height: 200px;
             overflow-y: scroll;
             padding: 20px;
-            border: 1px solid;
+            // border: 1px solid;
 
             .wish-container {
                 max-width: 400px;
@@ -240,11 +319,17 @@ p {
 
                 .wish-username {
                     margin-bottom: 10px;
+                    font-size: 15px;
+                }
+
+                .wish-text {
+                    font-size: 15px;
                 }
 
                 .wish-date {
                     text-align: right;
                     margin-top: 10px;
+                    font-size: 12px;
                 }
             }
 
@@ -277,22 +362,28 @@ p {
     }
 
     .seperator {
-        // width: 500px;
         height: 80px;
         margin-top: 30px;
-        // background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative; // important for absolute img
 
         img {
             position: absolute;
+            width: 50px;
+            opacity: 0;
+            animation: fadeInImg 1s ease forwards;
+            animation-delay: 0.8s; // wait until line starts filling
         }
 
         .line {
             width: 300px;
             border: 1px solid $brown-border;
+            transform: scaleX(0); // start invisible
+            transform-origin: left; // animate from left
+            animation: fillLine 1s ease forwards;
         }
     }
 }
@@ -309,3 +400,92 @@ p {
     background-color: #813e20 !important;
     color: white !important;
 }
+<<<<<<< HEAD
+=======
+
+.flipdown.flipdown__theme-light .rotor-group:nth-child(n+2):nth-child(-n+3):before,
+.flipdown.flipdown__theme-light .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+    background-color: #813e20 !important;
+
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    /* Light grey */
+    border-top: 4px solid #813e20;
+    /* Custom color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+    /* hidden by default */
+}
+
+
+.fade-in {
+    animation: fadeInText 3.5s ease forwards;
+}
+
+.line-fade-right {
+    transform-origin: left; // animate from left
+    animation: fillLine 1s ease forwards;
+}
+
+.img-fade-in {
+    animation: fadeInImg 1s ease forwards;
+    animation-delay: 0.8s; // wait until line starts filling
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInBg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.4; // your target transparency
+    }
+}
+
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1; // your target transparency
+    }
+}
+
+@keyframes fillLine {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fadeInImg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+>>>>>>> 411687419479f65bc898cd1b69454df4b104181d
