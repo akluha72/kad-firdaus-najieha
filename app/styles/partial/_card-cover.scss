@@ -6,10 +6,19 @@ $gold-text-lighter: #fdc77a;
 body {
     border: 8px solid $brown-border;
     background-color: $brown-border;
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-image: url(../images/cover/facade-center.png);
+    background-size: cover;
+
+    @media only screen and (min-width: 1200px) {
+        background-color: white;
+    }
 }
 
 .card-cover-wrapper {
-    height: 90vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,6 +26,20 @@ body {
     overflow: hidden;
     position: relative;
     background: $background;
+
+    // @media only screen and (min-width: 1200px) {
+    //     height: 100vh;
+    // }
+
+    .img-wrapper {
+        width: 100%;
+        position: relative;
+
+        @media only screen and (min-width: 1200px) {
+            width: 1000px;
+            height: 1000px;
+        }
+    }
 
     .bg-img {
         position: absolute;
@@ -29,7 +52,6 @@ body {
             width: 250px;
             height: 250px;
         }
-
 
         &.top-left {
             top: 0;
@@ -55,35 +77,35 @@ body {
             background-image: url("../images/cover/facade-bottom-right.png");
         }
 
-        &.center {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-image: url("../images/cover/facade-center.png");
-            width: 600px;
-            height: 600px;
+        // &.center {
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translate(-50%, -50%);
+        //     background-image: url("../images/cover/facade-center.png");
+        //     width: 600px;
+        //     height: 600px;
 
-            @media only screen and (min-width: 1200px) {
-                width: 1000px;
-                height: 1000px;
-            }
-        }
-
+        //     @media only screen and (min-width: 1200px) {
+        //         width: 1000px;
+        //         height: 1000px;
+        //     }
+        // }
     }
 
     .center-container {
         // position: absolute;
-        z-index: 1;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         color: white;
         background-color: $brown-border;
-        height: 50vh;
-        width: 240px;
+        // height: 50vh;
+        width: 70%;
         margin: 0 auto;
         border-radius: 30px;
+        padding: 40px 0px;
 
         @media only screen and (min-width: 1200px) {
             height: 540px;
@@ -107,6 +129,7 @@ body {
         .text-initial {
             display: flex;
             justify-content: center;
+            padding: 20px 0px;
 
             img {
                 width: 80%;
@@ -123,16 +146,20 @@ body {
                 color: white !important;
             }
         }
-
-
     }
 
     .button-con {
         display: flex;
         justify-content: center;
-        // margin-top: 80px;
         position: absolute;
-        top: 75vh;
+        bottom: -70px;
+        /* left: 50px; */
+        margin: 0 auto;
+        width: 100%;
+
+        @media only screen and (min-width: 1200px) {
+            bottom: 10vh;
+        }
 
         button {
             background-color: $brown-border;
@@ -143,7 +170,9 @@ body {
             font-family: "Bodoni Moda SC", serif;
             border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition:
+                background-color 0.3s ease,
+                transform 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
             &:hover {
