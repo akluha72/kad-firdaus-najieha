@@ -1,22 +1,49 @@
 "use strict";
 
-var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzp03InwEWZq9aN-jfvmtloI5dOWzIsHKe4XlcUvbrZbiGZNkW8Ezhdqc2SJgRtw0WA/exec';
-
-// Send new wish
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbybqkKh3mSD5tHNxvX0gEKDTnc7et8pz9GkiLmnaCqJUSE0oNFtjwqbJsP_yv14Jmjn/exec';
 function submitWish() {
-  var name = document.getElementById('name').value;
-  var wish = document.getElementById('wish').value;
+  var name = document.getElementById('name').value.trim();
+  var wish = document.getElementById('wish').value.trim();
+  var submitBtn = document.querySelector('.submit-btn');
+  if (!name || !wish) {
+    replaceModalContent("Please fill in all fields.", "error");
+    return;
+  }
+
+  // Disable button while submitting
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
   fetch(SCRIPT_URL, {
     method: 'POST',
+    // headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name: name,
       wish: wish
     })
   }).then(function (res) {
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
     return res.json();
   }).then(function (data) {
-    alert('Wish submitted! 🎉');
-    loadWishes(); // reload wishes after submit
+    if (data.status === "success") {
+      replaceModalContent("🎉 Successfully submitted! Thank you for your wish 💌", "success");
+
+      // Clear form fields
+      // document.getElementById('name').value = "";
+      // document.getElementById('wish').value = "";
+
+      // Reload wishes
+      loadWishes();
+    } else {
+      replaceModalContent("❌ Something went wrong. Please try again.", "error");
+    }
+  }).catch(function (err) {
+    console.error("Fetch error:", err);
+    replaceModalContent("❌ Something went wrong. Please try again.", "error");
+  }).finally(function () {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="far fa-paper-plane"></i> Submit';
   });
 }
 
@@ -65,6 +92,6 @@ window.onload = loadWishes;
 // Function to replace modal content
 function replaceModalContent(message, type) {
   var modalBody = document.querySelector('#rsvpModal .modal-body');
-  modalBody.innerHTML = "\n    <div class=\"message ".concat(type, "\">\n      <p>").concat(message, "</p>\n    </div>\n  ");
+  modalBody.innerHTML = "\n    <div class=\"modal-message ".concat(type, "\">\n      <p>").concat(message, "</p>\n    </div>\n  ");
 }
 //# sourceMappingURL=form.js.map

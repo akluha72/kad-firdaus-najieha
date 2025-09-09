@@ -59,23 +59,18 @@ document.getElementById('main-button').addEventListener('click', function () {
 
     // Show the second section and bottom-nav
     if (container && bottomNav) {
-        document.querySelector('.splash-screen').classList.add('swipe-up');
 
         setTimeout(function () {
             container.classList.remove('hide');
-            container2.classList.remove('hide');
             bottomNav.classList.remove('hide');
         }, 800)
 
-
         setTimeout(function () {
             document.querySelector('.splash-screen').classList.add('swipe-up');
-        }, 1200)
+        }, 1800)
 
-
-        // Start the AOS observer
+        container2.classList.remove('hide');
         aosObserver = createAOSObserver();
-
     }
 });
 

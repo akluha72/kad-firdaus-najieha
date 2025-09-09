@@ -7,11 +7,6 @@ body {
     border: 8px solid $brown-border;
     background-color: $brown-border;
 
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-image: url(../images/cover/facade-center.png);
-    background-size: cover;
-
     @media only screen and (min-width: 1200px) {
         background-color: white;
     }
@@ -27,18 +22,13 @@ body {
     position: relative;
     background: $background;
 
-    // @media only screen and (min-width: 1200px) {
-    //     height: 100vh;
-    // }
+    @media only screen and (min-width: 1200px) {
+        height: 100vh;
+    }
 
     .img-wrapper {
-        width: 100%;
         position: relative;
-
-        @media only screen and (min-width: 1200px) {
-            width: 1000px;
-            height: 1000px;
-        }
+        width: 100%;
     }
 
     .bg-img {
@@ -77,19 +67,20 @@ body {
             background-image: url("../images/cover/facade-bottom-right.png");
         }
 
-        // &.center {
-        //     top: 50%;
-        //     left: 50%;
-        //     transform: translate(-50%, -50%);
-        //     background-image: url("../images/cover/facade-center.png");
-        //     width: 600px;
-        //     height: 600px;
+        &.center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url("../images/cover/facade-center.png");
+            background-size: cover;
+            width: 500px;
+            height: 500px;
 
-        //     @media only screen and (min-width: 1200px) {
-        //         width: 1000px;
-        //         height: 1000px;
-        //     }
-        // }
+            @media only screen and (min-width: 1200px) {
+                width: 800px;
+                height: 800px;
+            }
+        }
     }
 
     .center-container {
@@ -105,7 +96,7 @@ body {
         width: 70%;
         margin: 0 auto;
         border-radius: 30px;
-        padding: 40px 0px;
+        padding: 25px 0px;
 
         @media only screen and (min-width: 1200px) {
             height: 540px;
@@ -130,12 +121,12 @@ body {
             display: flex;
             justify-content: center;
             padding: 20px 0px;
+            width: 250px;
+
 
             img {
                 width: 80%;
-                @media only screen and (min-width: 1200px) {
-                    width: 300px;
-                }
+                height: auto;
             }
         }
 
@@ -153,13 +144,8 @@ body {
         justify-content: center;
         position: absolute;
         bottom: -70px;
-        /* left: 50px; */
         margin: 0 auto;
         width: 100%;
-
-        @media only screen and (min-width: 1200px) {
-            bottom: 10vh;
-        }
 
         button {
             background-color: $brown-border;

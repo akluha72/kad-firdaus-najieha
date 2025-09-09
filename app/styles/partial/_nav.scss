@@ -198,7 +198,8 @@ $gold-text-lighter: #fdc77a;
         .input-group {
           margin: 10px;
 
-          input, textarea {
+          input,
+          textarea {
             height: 30px;
             width: 100%;
             border: 1px solid #C79E4F;
@@ -281,6 +282,7 @@ $gold-text-lighter: #fdc77a;
           border-radius: 10px;
           padding: 10px;
           color: white;
+          cursor: pointer;
         }
       }
 
@@ -333,6 +335,49 @@ $gold-text-lighter: #fdc77a;
       }
     }
   }
+
+  .modal-message {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 1rem 0;
+
+    &.success {
+      background-color: #e6ffed;
+      color: #1a7f37;
+      border: 1px solid #1a7f37;
+    }
+
+    &.error {
+      background-color: #ffe6e6;
+      color: #b71c1c;
+      border: 1px solid #b71c1c;
+    }
+  }
+
+  .submit-btn {
+    background-color: #18374e;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background-color: darken(#18374e, 10%);
+    }
+
+    &:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
 
 }
 
