@@ -37,7 +37,9 @@ p {
 
 .content-wrapper {
     .splash-screen {
-        height: 100vh;
+        // height: 100vh;
+        height: calc(var(--vh, 1vh) * 100); /* instead of 100vh */
+
         position: absolute;
         z-index: 9999;
         background-color: $brown-border;
@@ -70,7 +72,7 @@ p {
             opacity: 0;
             filter: brightness(0.5);
             transform: translateX(-50px);
-            animation: fadeInLeft 0.5s ease-out forwards; 
+            animation: fadeInLeft 0.5s ease-out forwards;
 
             img {
                 width: 100%;
@@ -451,7 +453,7 @@ p {
     }
 
     to {
-        opacity: 1; 
+        opacity: 1;
     }
 }
 
