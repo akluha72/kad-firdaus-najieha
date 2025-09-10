@@ -2,6 +2,17 @@
 
 AOS.init();
 document.body.classList.add('no-scroll');
+function setViewportHeight() {
+  // Get the inner height (visible viewport height)
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+}
+
+// Set on load
+setViewportHeight();
+
+// Update on resize/orientation change
+window.addEventListener('resize', setViewportHeight);
 
 // Enhanced observer that can watch multiple elements
 function createAOSObserver() {
