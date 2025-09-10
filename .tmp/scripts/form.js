@@ -6,13 +6,13 @@ function submitWish() {
   var wish = document.getElementById('wish').value.trim();
   var submitBtn = document.querySelector('.submit-btn');
   if (!name || !wish) {
-    replaceModalContent("Please fill in all fields.", "error");
+    replaceModalContent('Please fill in all fields.', 'error');
     return;
   }
 
   // Disable button while submitting
   submitBtn.disabled = true;
-  submitBtn.textContent = "Submitting...";
+  submitBtn.textContent = 'Submitting...';
   fetch(SCRIPT_URL, {
     method: 'POST',
     // headers: { "Content-Type": "application/json" },
@@ -22,12 +22,12 @@ function submitWish() {
     })
   }).then(function (res) {
     if (!res.ok) {
-      throw new Error("Network response was not ok");
+      throw new Error('Network response was not ok');
     }
     return res.json();
   }).then(function (data) {
-    if (data.status === "success") {
-      replaceModalContent("🎉 Successfully submitted! Thank you for your wish 💌", "success");
+    if (data.status === 'success') {
+      replaceModalContent('🎉 Successfully submitted! Thank you for your wish 💌', 'success');
 
       // Clear form fields
       // document.getElementById('name').value = "";
@@ -36,11 +36,11 @@ function submitWish() {
       // Reload wishes
       loadWishes();
     } else {
-      replaceModalContent("❌ Something went wrong. Please try again.", "error");
+      replaceModalContent('❌ Something went wrong. Please try again.', 'error');
     }
   }).catch(function (err) {
-    console.error("Fetch error:", err);
-    replaceModalContent("❌ Something went wrong. Please try again.", "error");
+    console.error('Fetch error:', err);
+    replaceModalContent('❌ Something went wrong. Please try again.', 'error');
   }).finally(function () {
     submitBtn.disabled = false;
     submitBtn.innerHTML = '<i class="far fa-paper-plane"></i> Submit';

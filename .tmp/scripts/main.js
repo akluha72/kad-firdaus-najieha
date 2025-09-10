@@ -49,6 +49,10 @@ document.getElementById('main-button').addEventListener('click', function () {
       document.body.classList.remove('no-scroll');
     }, 500);
   }
+  var audio = document.getElementById('bg-audio');
+  if (audio.paused) {
+    audio.play();
+  }
 
   // Show the second section and bottom-nav
   if (container && bottomNav) {

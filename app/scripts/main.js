@@ -57,6 +57,11 @@ document.getElementById('main-button').addEventListener('click', function () {
         }, 500);
     }
 
+    const audio = document.getElementById('bg-audio');
+    if (audio.paused) {
+        audio.play();
+    }
+
     // Show the second section and bottom-nav
     if (container && bottomNav) {
 
