@@ -64,7 +64,7 @@ function loadWishes() {
     .then(data => {
       list.innerHTML = '';
 
-      data.forEach(item => {
+      data.reverse().forEach(item => {
         const date = new Date(item.timestamp);
         const formattedDate = date.toLocaleDateString('en-GB', {
           day: '2-digit',

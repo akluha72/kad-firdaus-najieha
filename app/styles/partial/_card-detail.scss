@@ -21,7 +21,7 @@ h2 {
     font-size: 1rem;
 
     @media only screen and (min-width: 1200px) {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -36,7 +36,6 @@ p {
 }
 
 .content-wrapper {
-
     .splash-screen {
         height: 100vh;
         position: absolute;
@@ -45,7 +44,9 @@ p {
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.9s ease-in-out, opacity 2s ease-in-out;
+        transition:
+            transform 0.9s ease-in-out,
+            opacity 2s ease-in-out;
         transform: translateY(0);
         opacity: 1;
 
@@ -61,7 +62,6 @@ p {
         }
     }
 }
-
 
 .main-content-wrapper {
     // display: none;
@@ -82,18 +82,27 @@ p {
             url("../images/cover/center-right.png") center right no-repeat,
             url("../images/cover/facade-bottom-left.png") bottom left no-repeat,
             url("../images/cover/facade-bottom-right.png") bottom right no-repeat;
-        background-size: 150px 150px, 150px 150px, 80px 180px, 80px 180px, 150px 150px;
+        background-size:
+            150px 150px,
+            150px 150px,
+            80px 180px,
+            80px 180px,
+            150px 150px;
         animation: fadeInBg 6s ease forwards;
 
         @media only screen and (min-width: 1200px) {
-            background-size: 250px 250px, 250px 250px, 140px 300px, 140px 300px, 250px 250px;
+            background-size:
+                250px 250px,
+                250px 250px,
+                140px 300px,
+                140px 300px,
+                250px 250px;
         }
     }
 
     .brides-detail-container {
         text-align: center;
         color: $brown-border;
-
 
         h2 {
             margin-bottom: 0;
@@ -102,13 +111,13 @@ p {
 
         p {
             color: $brown-border;
+            font-family: "Playfair Display" !important;
         }
 
         &.parent {
             margin-top: 10vh;
             margin-bottom: 20px;
             animation: fadeInText 5s ease forwards;
-
         }
 
         &.brides {
@@ -124,11 +133,12 @@ p {
         margin: 50px 30px;
         text-align: center;
         animation: fadeInText 5s ease forwards;
-
+        font-family: "classy_v";
 
         p {
             color: $brown-border;
             font-size: 14px;
+            font-family: "classy_v";
         }
 
         .dotted-line {
@@ -148,12 +158,12 @@ p {
 
         h2 {
             font-weight: bolder;
-            font-size: 20px !important;
+            font-size: 23px !important;
         }
 
         h3 {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 19px;
         }
 
         p {
@@ -169,12 +179,11 @@ p {
         align-items: center;
         margin: 30px auto;
 
-
         h2 {
             color: white;
             text-align: center;
-            font-family: 'Playfair Display';
-            font-size: 20px !important;
+            font-family: "Playfair Display";
+            font-size: 23px !important;
             font-weight: bolder;
 
             @media only screen and (min-width: 1200px) {
@@ -210,7 +219,7 @@ p {
                 padding: 8px;
                 max-width: 300px;
                 @media only screen and (min-width: 1200px) {
-                  max-width: 600px;
+                    max-width: 600px;
                 }
                 // margin-left: 30px;
 
@@ -261,7 +270,7 @@ p {
 
         h2 {
             margin-bottom: 20px;
-            font-size: 20px !important;
+            font-size: 23px !important;
         }
 
         .wish-scroller {
@@ -277,11 +286,13 @@ p {
 
                 .wish-username {
                     margin-bottom: 10px;
-                    font-size: 15px;
+                    font-size: 18px;
+                    font-family: "Playfair Display";
                 }
 
                 .wish-text {
                     font-size: 15px;
+                    font-family: "classy_v"
                 }
 
                 .wish-date {
@@ -334,6 +345,7 @@ p {
             opacity: 0;
             animation: fadeInImg 1s ease forwards;
             animation-delay: 5s; // wait until line starts filling
+            z-index: 2;
         }
 
         .line {
@@ -359,10 +371,9 @@ p {
     color: white !important;
 }
 
-.flipdown.flipdown__theme-light .rotor-group:nth-child(n+2):nth-child(-n+3):before,
-.flipdown.flipdown__theme-light .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+.flipdown.flipdown__theme-light .rotor-group:nth-child(n + 2):nth-child(-n + 3):before,
+.flipdown.flipdown__theme-light .rotor-group:nth-child(n + 2):nth-child(-n + 3):after {
     background-color: #813e20 !important;
-
 }
 
 .loader {
@@ -378,7 +389,6 @@ p {
     display: none;
     /* hidden by default */
 }
-
 
 .fade-in {
     animation: fadeInText 3.5s ease forwards;
@@ -413,7 +423,6 @@ p {
         opacity: 0.4; // your target transparency
     }
 }
-
 
 @keyframes fadeInText {
     from {

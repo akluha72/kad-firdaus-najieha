@@ -1,4 +1,9 @@
 AOS.init();
+// Initialize Lenis
+const lenis = new Lenis({
+    autoRaf: true,
+});
+
 document.body.classList.add('no-scroll');
 
 function setViewportHeight() {

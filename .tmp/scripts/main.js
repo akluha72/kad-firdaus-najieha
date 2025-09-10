@@ -1,6 +1,10 @@
 "use strict";
 
 AOS.init();
+// Initialize Lenis
+var lenis = new Lenis({
+  autoRaf: true
+});
 document.body.classList.add('no-scroll');
 function setViewportHeight() {
   // Get the inner height (visible viewport height)

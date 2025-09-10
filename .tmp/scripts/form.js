@@ -59,7 +59,7 @@ function loadWishes() {
     return res.json();
   }).then(function (data) {
     list.innerHTML = '';
-    data.forEach(function (item) {
+    data.reverse().forEach(function (item) {
       var date = new Date(item.timestamp);
       var formattedDate = date.toLocaleDateString('en-GB', {
         day: '2-digit',
