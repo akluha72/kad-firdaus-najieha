@@ -52,19 +52,49 @@ p {
 
         img {
             width: 80%;
-            // animation: fadeInBg 0.2s ease forwards;
+            animation: fadeInBg 0.2s ease forwards;
         }
 
         &.swipe-up {
-            transform: translateY(-100%); // move out to top
+            transform: translateY(-100%);
             // opacity: 0; // fade out
-            pointer-events: none; // avoid blocking clicks underneath
+            pointer-events: none;
+        }
+
+        .splash-top-left {
+            width: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            filter: brightness(0.5);
+            transform: translateX(-50px);
+            animation: fadeInLeft 0.5s ease-out forwards; 
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .splash-bottom-right {
+            width: 300px;
+            position: absolute;
+            bottom: 0;
+            right: 0px;
+            filter: brightness(0.5);
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeInRight 0.5s ease-out forwards;
+
+            img {
+                width: 100%;
+            }
         }
     }
 }
 
 .main-content-wrapper {
-    // display: none;
+    border: 8px solid $brown-border;
     position: relative;
     background: $background;
     padding: 3vw 3vw 10vw;
@@ -292,7 +322,7 @@ p {
 
                 .wish-text {
                     font-size: 15px;
-                    font-family: "classy_v"
+                    font-family: "classy_v";
                 }
 
                 .wish-date {
@@ -420,7 +450,7 @@ p {
     }
 
     to {
-        opacity: 0.4; // your target transparency
+        opacity: 1; 
     }
 }
 
@@ -430,7 +460,7 @@ p {
     }
 
     to {
-        opacity: 1; // your target transparency
+        opacity: 1;
     }
 }
 
@@ -451,5 +481,19 @@ p {
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

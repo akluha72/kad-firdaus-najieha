@@ -89,7 +89,7 @@ document.getElementById('main-button').addEventListener('click', function () {
 
         setTimeout(function () {
             document.querySelector('.splash-screen').classList.add('swipe-up');
-        }, 1800)
+        }, 2000)
 
         container2.classList.remove('hide');
         aosObserver = createAOSObserver();

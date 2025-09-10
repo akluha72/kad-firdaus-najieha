@@ -4,7 +4,6 @@ $gold: #ffbb5c;
 $gold-text-lighter: #fdc77a;
 
 body {
-    border: 8px solid $brown-border;
     background-color: $brown-border;
 
     @media only screen and (min-width: 1200px) {
@@ -14,6 +13,8 @@ body {
 
 .card-cover-wrapper {
     // height: 85vh;
+    border: 8px solid $brown-border;
+
     height: calc(var(--vh, 1vh) * 100); /* instead of 100vh */
     display: flex;
     flex-direction: column;
