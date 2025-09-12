@@ -12,4 +12,3 @@ function decrement(id) {
     input.value = value - 1;
   }
 }
-//# sourceMappingURL=rsvp.js.map
