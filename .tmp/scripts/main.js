@@ -98,3 +98,4 @@ playPauseBtn.addEventListener('click', function () {
     playPauseBtn.innerHTML = playIcon;
   }
 });
+//# sourceMappingURL=main.js.map

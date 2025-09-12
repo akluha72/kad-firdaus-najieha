@@ -79,3 +79,4 @@ document.addEventListener('DOMContentLoaded', function () {
     schedule[0].element.classList.add('current');
   }
 });
+//# sourceMappingURL=schedule.js.map

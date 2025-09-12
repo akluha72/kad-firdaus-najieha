@@ -94,3 +94,4 @@ function replaceModalContent(message, type) {
   var modalBody = document.querySelector('#rsvpModal .modal-body');
   modalBody.innerHTML = "\n    <div class=\"modal-message ".concat(type, "\">\n      <p>").concat(message, "</p>\n    </div>\n  ");
 }
+//# sourceMappingURL=form.js.map
