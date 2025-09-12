@@ -18,4 +18,3 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Invalid countdown date');
   }
 });
-//# sourceMappingURL=flipdown.js.map

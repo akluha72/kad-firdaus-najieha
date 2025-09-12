@@ -40,4 +40,3 @@ window.onclick = function (event) {
     closeModal(currentModalId);
   }
 };
-//# sourceMappingURL=nav.js.map

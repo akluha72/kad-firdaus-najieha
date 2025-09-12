@@ -132,4 +132,3 @@ _update = function update() {
   requestAnimationFrame(_update);
 };
 requestAnimationFrame(_update);
-//# sourceMappingURL=particles.js.map
