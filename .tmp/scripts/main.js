@@ -65,9 +65,9 @@ document.getElementById('main-button').addEventListener('click', function () {
     }, 500);
   }
   var audio = document.getElementById('bg-audio');
-  if (audio.paused) {
-    audio.play();
-  }
+  audio.play();
+  // document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-play"></i>';
+  document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-pause"></i>';
 
   // Show the second section and bottom-nav
   if (container && bottomNav) {
@@ -80,6 +80,22 @@ document.getElementById('main-button').addEventListener('click', function () {
     }, 2000);
     container2.classList.remove('hide');
     aosObserver = createAOSObserver();
+  }
+});
+var audio = document.getElementById('bg-audio');
+var playPauseBtn = document.getElementById('playPauseBtn');
+var playIcon = '<i class="fas fa-play"></i>';
+var pauseIcon = '<i class="fas fa-pause"></i>';
+audio.volume = 0.5;
+
+// Toggle play/pause button
+playPauseBtn.addEventListener('click', function () {
+  if (audio.paused) {
+    audio.play();
+    playPauseBtn.innerHTML = pauseIcon;
+  } else {
+    audio.pause();
+    playPauseBtn.innerHTML = playIcon;
   }
 });
 //# sourceMappingURL=main.js.map

@@ -75,9 +75,9 @@ document.getElementById('main-button').addEventListener('click', function () {
     }
 
     const audio = document.getElementById('bg-audio');
-    if (audio.paused) {
-        audio.play();
-    }
+    audio.play();
+    // document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-play"></i>';
+    document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-pause"></i>';
 
     // Show the second section and bottom-nav
     if (container && bottomNav) {
@@ -96,3 +96,22 @@ document.getElementById('main-button').addEventListener('click', function () {
     }
 });
 
+
+
+const audio = document.getElementById('bg-audio');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const playIcon = '<i class="fas fa-play"></i>';
+const pauseIcon = '<i class="fas fa-pause"></i>';
+
+audio.volume = 0.5;
+
+// Toggle play/pause button
+playPauseBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playPauseBtn.innerHTML = pauseIcon;
+    } else {
+        audio.pause();
+        playPauseBtn.innerHTML = playIcon;
+    }
+});

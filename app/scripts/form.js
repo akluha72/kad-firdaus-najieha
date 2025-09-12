@@ -111,3 +111,4 @@ function replaceModalContent(message, type) {
     </div>
   `;
 }
+
